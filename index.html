@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>本番前に練習する婚活支援｜アコード結婚相談所</title>
-<meta name="description" content="実績のある実践型の婚活コーチングを行う結婚相談所です。そもそも会えない、会えても次につながらない。IBJの会員ネットワークで結婚を考える相手との出会いを広げ、プロフィール・お見合い・LINE・デートを実践型プログラムで改善します。30分の無料相談をオンラインで実施しています。">
+<meta name="description" content="実績のある実践型の婚活コーチングを行う結婚相談所です。そもそも会えない、会えても次につながらない悩みに対し、プロフィール、お見合い、会話、LINE、デートを具体的に改善します。面談予約を迷っている方向けのLINE60秒セルフチェックと、担当者と話す30分の無料個別診断を用意しています。">
 <link rel="canonical" href="{{公開URL}}">
 <meta name="robots" content="index, follow">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="なかなか会えない。会えても、続かない。｜アコード結婚相談所">
-<meta property="og:description" content="出会いを、関係に変える婚活支援。会話・LINE・デートの詰まりを見える化し、練習と実践で改善します。">
+<meta property="og:description" content="出会いを、関係に変える婚活支援。まずはLINEで60秒セルフチェック。具体的に相談したい方は、担当者と話す30分の無料個別診断へ。">
 <meta property="og:image" content="ogp.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -298,6 +298,28 @@ h3,.h3{font-size:var(--fs-h3);font-weight:700;line-height:var(--lh-h3);color:var
 .link-sub small{font-size:12.5px;font-weight:500;color:var(--t-sub)}
 .link-sub .ttl{font-size:15px;font-weight:700;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
 .link-sub i{flex:none;width:7px;height:7px;border-top:2px solid currentColor;border-right:2px solid currentColor;transform:rotate(45deg)}
+
+/* ---- 導線グループ（主導線＋副導線） ---- */
+.cta-group{display:flex;flex-direction:column;gap:14px;align-items:stretch;max-width:520px}
+.cta-block .cta-group{margin-inline:auto;text-align:left}
+.cta-group--wide{max-width:560px}
+.cta-group + .cta-group{margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+.on-dark .cta-group + .cta-group{border-top-color:rgba(255,255,255,.16)}
+.bg-pale .cta-group + .cta-group{border-top-color:var(--line-strong)}
+.cta-group > .btn,.cta-group > .btn-line{width:100%}
+
+.cta-for{
+  display:inline-flex;align-items:center;gap:8px;align-self:flex-start;
+  padding:5px 12px;border-radius:999px;background:var(--gray);
+  border:1px solid var(--line);
+  font-size:13px;font-weight:700;line-height:1.6;color:var(--navy-mid);
+}
+.cta-for--line{background:#F0FBF4;border-color:#BFE9CF;color:#0B7A3B}
+.on-dark .cta-for{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.2);color:#D5E2EE}
+.on-dark .cta-for--line{background:rgba(6,199,85,.14);border-color:rgba(6,199,85,.55);color:#7FE0A8}
+
+.cta-note{font-size:13.5px;line-height:1.75;color:var(--t-sub)}
+.on-dark .cta-note{color:#C3D2DF}
 
 .cta-stack{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
 .cta-stack > .btn,.cta-stack > .btn-line{width:100%}
@@ -1014,7 +1036,7 @@ h3,.h3{font-size:var(--fs-h3);font-weight:700;line-height:var(--lh-h3);color:var
     </nav>
 
     <div class="hd__cta">
-      <a class="btn btn--sm" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_header">30分の無料診断を予約する</a>
+      <a class="btn btn--sm" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_header">30分の無料個別診断を予約する</a>
     </div>
 
     <button class="hd__burger" type="button" aria-expanded="false" aria-controls="mnav" aria-label="メニューを開く">
@@ -1031,7 +1053,7 @@ h3,.h3{font-size:var(--fs-h3);font-weight:700;line-height:var(--lh-h3);color:var
     <a href="#pricing">料金</a>
     <a href="#faq">よくある質問</a>
   </nav>
-  <a class="btn btn--block" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_header">30分の無料診断を予約する</a>
+  <a class="btn btn--block" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_header">30分の無料個別診断を予約する</a>
 </div>
 
 <main id="main">
@@ -1064,17 +1086,24 @@ h3,.h3{font-size:var(--fs-h3);font-weight:700;line-height:var(--lh-h3);color:var
         <li>無理な勧誘なし</li>
       </ul>
 
-      <div class="hero__actions cta-stack">
-        <a class="btn-line" id="cta-line-hero" href="https://lin.ee/SDYjZsC" data-line="cta_line_hero">
-          <span class="ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.9 3 2.8 6.4 2.8 10.6c0 3.8 3.3 7 7.7 7.6.3.06.7.2.8.46.1.24.06.6.03.85l-.13.8c-.04.24-.19.93.82.5 1-.42 5.4-3.2 7.4-5.5 1.35-1.5 2-3 2-4.7C21.4 6.4 17.2 3 12 3Z"/></svg></span><span class="txt"><b>LINEで60秒</b><span>婚活改善ポイントチェック</span></span>
-        </a>
-        <p class="hero__micro pw"><span>5問に答えるだけで、今、</span><span>最初に見直すべきポイントが分かります。</span></p>
+      <div class="hero__actions">
+        <div class="cta-group cta-group--wide">
+          <span class="cta-for">今すぐ具体的に相談したい方</span>
+          <a class="btn" id="cta-timerex-hero" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_hero">
+            <span class="pw"><span>30分の無料個別診断を</span><span>予約する</span></span><i class="arw" aria-hidden="true"></i>
+          </a>
+          <p class="cta-note pw"><span>オンラインで担当者と話し、</span><span>課題・優先順位・次の一手を整理します。</span></p>
+        </div>
 
-        <a class="link-sub" id="cta-timerex-hero" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_hero">
-          <span class="txt"><small>すぐに相談したい方はこちら</small><span class="ttl">30分の無料婚活ボトルネック診断を予約する</span></span><i aria-hidden="true"></i>
-        </a>
+        <div class="cta-group cta-group--wide">
+          <span class="cta-for cta-for--line">面談予約するか迷っている方</span>
+          <a class="btn-line" id="cta-line-hero" href="https://lin.ee/SDYjZsC" data-line="cta_line_hero">
+            <span class="ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.9 3 2.8 6.4 2.8 10.6c0 3.8 3.3 7 7.7 7.6.3.06.7.2.8.46.1.24.06.6.03.85l-.13.8c-.04.24-.19.93.82.5 1-.42 5.4-3.2 7.4-5.5 1.35-1.5 2-3 2-4.7C21.4 6.4 17.2 3 12 3Z"/></svg></span><span class="txt"><span>LINEで60秒セルフチェック</span></span>
+          </a>
+          <p class="cta-note pw"><span>5問・約60秒・面談なし。</span><span>まずは最初に見直すべき領域を</span><span>簡単に確認できます。</span></p>
+        </div>
 
-        <a class="btn-ghost" href="#method">支援内容を見る</a>
+        <a class="btn-ghost" href="#method" style="margin-top:24px">支援内容を見る</a>
       </div>
     </div>
   </div>
@@ -1157,13 +1186,13 @@ h3,.h3{font-size:var(--fs-h3);font-weight:700;line-height:var(--lh-h3);color:var
     </div>
 
     <div class="cta-block reveal">
-      <div class="cta-stack">
+      <div class="cta-group">
+        <span class="cta-for cta-for--line">面談予約するか迷っている方へ</span>
         <a class="btn-line" id="cta-line-cause" href="https://lin.ee/SDYjZsC" data-line="cta_line_cause">
-          <span class="ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.9 3 2.8 6.4 2.8 10.6c0 3.8 3.3 7 7.7 7.6.3.06.7.2.8.46.1.24.06.6.03.85l-.13.8c-.04.24-.19.93.82.5 1-.42 5.4-3.2 7.4-5.5 1.35-1.5 2-3 2-4.7C21.4 6.4 17.2 3 12 3Z"/></svg></span><span class="txt"><b>自分が最初に見直すべきポイントを</b><span>LINEで確認する</span></span>
+          <span class="ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.9 3 2.8 6.4 2.8 10.6c0 3.8 3.3 7 7.7 7.6.3.06.7.2.8.46.1.24.06.6.03.85l-.13.8c-.04.24-.19.93.82.5 1-.42 5.4-3.2 7.4-5.5 1.35-1.5 2-3 2-4.7C21.4 6.4 17.2 3 12 3Z"/></svg></span><span class="txt"><span>LINEで60秒セルフチェック</span></span>
         </a>
-        <p class="micro-line">5問・約60秒・無料</p>
+        <p class="cta-note">5問・約60秒・面談なし。最初に見直すべき領域を簡易的に整理します。</p>
       </div>
-      <p class="note micro">5問の回答から、最初に見直すべき領域を簡易的に整理します。</p>
     </div>
   </div>
 </section>
@@ -1330,9 +1359,9 @@ h3,.h3{font-size:var(--fs-h3);font-weight:700;line-height:var(--lh-h3);color:var
 
     <div class="cta-block reveal">
       <a class="btn" id="cta-timerex-cycle" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_after_method">
-        30分の無料婚活ボトルネック診断を予約する<i class="arw" aria-hidden="true"></i>
+        <span class="pw"><span>30分の無料個別診断を</span><span>予約する</span></span><i class="arw" aria-hidden="true"></i>
       </a>
-      <p class="note micro">現在の詰まりポイントを、その場で言語化します。</p>
+      <p class="note micro">担当者と話しながら、現在の詰まりポイントを言語化します。</p>
     </div>
   </div>
 </section>
@@ -1496,9 +1525,9 @@ h3,.h3{font-size:var(--fs-h3);font-weight:700;line-height:var(--lh-h3);color:var
     </div>
 
     <div class="spot reveal">
-      <p>交際に至った方と、そうでなかった方。<br>その違いは、30分の無料診断でお伝えします。</p>
+      <p>交際に至った方と、そうでなかった方。<br>その違いと、あなたが最初に変えるべき行動を、<br>30分の無料個別診断で整理します。</p>
       <a class="btn" id="cta-timerex-results" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_results">
-        <span class="pw"><span>30分の無料婚活</span><span>ボトルネック診断を</span><span>予約する</span></span><i class="arw" aria-hidden="true"></i>
+        <span class="pw"><span>30分の無料個別診断を</span><span>予約する</span></span><i class="arw" aria-hidden="true"></i>
       </a>
     </div>
 
@@ -1665,7 +1694,7 @@ h3,.h3{font-size:var(--fs-h3);font-weight:700;line-height:var(--lh-h3);color:var
 
     <div class="cta-block reveal">
       <a class="btn" id="cta-timerex-price" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_pricing">
-        <span class="pw"><span>料金と自分に合う支援内容を</span><span>無料相談で確認する</span></span><i class="arw" aria-hidden="true"></i>
+        <span class="pw"><span>料金と支援内容を</span><span>無料個別診断で確認する</span></span><i class="arw" aria-hidden="true"></i>
       </a>
       <p class="note micro">金額や内容を確認したうえで、ご判断ください。無理な勧誘は行いません。</p>
     </div>
@@ -1717,7 +1746,7 @@ h3,.h3{font-size:var(--fs-h3);font-weight:700;line-height:var(--lh-h3);color:var
     </div>
 
     <div class="prose center mx-auto reveal" style="margin-top:36px">
-      <p style="font-weight:700;color:var(--navy-deep)">合う・合わないも含め、無料相談で率直にお伝えします。</p>
+      <p style="font-weight:700;color:var(--navy-deep)">合う・合わないも含め、30分の無料個別診断で率直にお伝えします。</p>
     </div>
   </div>
 </section>
@@ -1729,8 +1758,9 @@ h3,.h3{font-size:var(--fs-h3);font-weight:700;line-height:var(--lh-h3);color:var
   <div class="wrap">
     <div class="split">
       <div class="reveal">
-        <p class="eyebrow">無料相談</p>
+        <p class="eyebrow">30分の無料個別診断</p>
         <h2>まずは、今の婚活を<br>30分で見える化しませんか。</h2>
+        <p style="margin-top:18px">自動判定ではなく、担当者がオンライン面談でお話を伺います。現在の婚活状況を整理し、課題、優先順位、次の一手を具体化する時間です。</p>
 
         <ol class="steps-num" style="margin-top:36px">
           <li>
@@ -1747,7 +1777,7 @@ h3,.h3{font-size:var(--fs-h3);font-weight:700;line-height:var(--lh-h3);color:var
           </li>
           <li>
             <h3>次の一手</h3>
-            <p>無料相談後に何を実行するかを、具体的な行動に落とし込みます。</p>
+            <p>個別診断後に何を実行するかを、具体的な行動に落とし込みます。</p>
           </li>
         </ol>
 
@@ -1763,18 +1793,23 @@ h3,.h3{font-size:var(--fs-h3);font-weight:700;line-height:var(--lh-h3);color:var
         </div>
 
         <div style="margin-top:36px">
-          <a class="btn" id="cta-timerex-consultation" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_consult">
-            <span class="pw"><span>30分の無料婚活</span><span>ボトルネック診断を</span><span>予約する</span></span><i class="arw" aria-hidden="true"></i>
-          </a>
-
-          <div style="margin-top:20px">
-            <a class="btn-line-sub" id="cta-line-consultation" href="https://lin.ee/SDYjZsC" data-line="cta_line_consultation">
-              <span class="ico" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.9 3 2.8 6.4 2.8 10.6c0 3.8 3.3 7 7.7 7.6.3.06.7.2.8.46.1.24.06.6.03.85l-.13.8c-.04.24-.19.93.82.5 1-.42 5.4-3.2 7.4-5.5 1.35-1.5 2-3 2-4.7C21.4 6.4 17.2 3 12 3Z"/></svg></span><span class="txt"><b>まだ面談予約を迷っている方</b><span>LINEで60秒チェック</span></span>
+          <div class="cta-group">
+            <span class="cta-for">担当者と具体的に整理したい方</span>
+            <a class="btn" id="cta-timerex-consultation" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_consult">
+              <span class="pw"><span>30分の無料個別診断を</span><span>予約する</span></span><i class="arw" aria-hidden="true"></i>
             </a>
-            <p class="micro-line" style="margin-top:10px">5問に答えるだけで、相談前に改善候補を整理できます。</p>
+            <p class="cta-note">オンライン面談で30分。相談だけでも問題ありません。</p>
           </div>
 
-          <ul class="tick">
+          <div class="cta-group">
+            <span class="cta-for cta-for--line">面談予約するか迷っている方へ</span>
+            <a class="btn-line" id="cta-line-consultation" href="https://lin.ee/SDYjZsC" data-line="cta_line_consultation">
+              <span class="ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.9 3 2.8 6.4 2.8 10.6c0 3.8 3.3 7 7.7 7.6.3.06.7.2.8.46.1.24.06.6.03.85l-.13.8c-.04.24-.19.93.82.5 1-.42 5.4-3.2 7.4-5.5 1.35-1.5 2-3 2-4.7C21.4 6.4 17.2 3 12 3Z"/></svg></span><span class="txt"><span>LINEで60秒セルフチェック</span></span>
+            </a>
+            <p class="cta-note">5問・約60秒・面談なし。相談前に改善候補を簡易的に整理できます。</p>
+          </div>
+
+          <ul class="tick" style="margin-top:24px">
             <li>オンライン（Google Meet）</li>
             <li>全国から相談可能</li>
             <li>相談だけでも可</li>
@@ -1806,13 +1841,13 @@ h3,.h3{font-size:var(--fs-h3);font-weight:700;line-height:var(--lh-h3);color:var
       <div class="faq__item">
         <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="fa1" id="fq1">
           <span class="q" aria-hidden="true">Q1</span>
-          <span>無料相談だけでも大丈夫ですか？</span>
+          <span>30分の無料個別診断だけでも大丈夫ですか？</span>
           <span class="ico" aria-hidden="true"></span>
         </button></h3>
         <div class="faq__a" id="fa1" role="region" aria-labelledby="fq1" data-open="false">
-          <p>はい。無料相談は、入会を前提に話を聞く場ではありません。</p>
-          <p>現在の婚活でどこが止まっているか、何を変えるべきか、そもそもサポートが必要かを整理する時間です。</p>
-          <p>相談後に入会しない判断をしても問題ありません。</p>
+          <p>はい。30分の無料個別診断は、入会を前提に話を進める場ではありません。</p>
+          <p>担当者とGoogle Meetで、現在の婚活でどこが止まっているか、何を変えるべきか、そもそもサポートが必要かを整理します。</p>
+          <p>診断後に入会しない判断をしても問題ありません。</p>
         </div>
       </div>
 
@@ -1941,21 +1976,26 @@ h3,.h3{font-size:var(--fs-h3);font-weight:700;line-height:var(--lh-h3);color:var
       <h2>今の婚活を、<br>感覚のまま続けない。</h2>
       <div class="stack" style="margin-top:24px">
         <p>出会いが少ないのか、出会った後で止まっているのか。原因が分からないままでは、次の出会いでも同じところで止まる可能性があります。</p>
-        <p>まずは30分で、現在の課題と次の一手を整理しましょう。IBJ正規加盟店のアコード結婚相談所が、出会いの機会づくりから成婚まで、同じ窓口で伴走します。</p>
+        <p>まずは30分の無料個別診断で、現在の課題と次の一手を整理しましょう。IBJ正規加盟店のアコード結婚相談所が、出会いの機会づくりから成婚まで、同じ窓口で伴走します。</p>
       </div>
       <div style="margin-top:32px">
-        <a class="btn" id="cta-timerex-final" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_final">
-          <span class="pw"><span>30分の無料婚活</span><span>ボトルネック診断を</span><span>予約する</span></span><i class="arw" aria-hidden="true"></i>
-        </a>
-
-        <div style="margin-top:20px">
-          <a class="btn-line-sub" id="cta-line-final" href="https://lin.ee/SDYjZsC" data-line="cta_line_final">
-            <span class="ico" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.9 3 2.8 6.4 2.8 10.6c0 3.8 3.3 7 7.7 7.6.3.06.7.2.8.46.1.24.06.6.03.85l-.13.8c-.04.24-.19.93.82.5 1-.42 5.4-3.2 7.4-5.5 1.35-1.5 2-3 2-4.7C21.4 6.4 17.2 3 12 3Z"/></svg></span><span class="txt"><b>まずは自分で整理したい方</b><span>LINEで60秒 婚活改善ポイントチェック</span></span>
+        <div class="cta-group">
+          <span class="cta-for">今すぐ具体的に相談したい方</span>
+          <a class="btn" id="cta-timerex-final" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_final">
+            <span class="pw"><span>30分の無料個別診断を</span><span>予約する</span></span><i class="arw" aria-hidden="true"></i>
           </a>
-          <p class="micro-line" style="margin-top:10px">5問・無料・面談予約は必須ではありません。</p>
+          <p class="cta-note">担当者とGoogle Meetで、課題・優先順位・次の一手を整理します。</p>
         </div>
 
-        <ul class="trust" style="margin-top:20px">
+        <div class="cta-group">
+          <span class="cta-for cta-for--line">面談予約するか迷っている方</span>
+          <a class="btn-line" id="cta-line-final" href="https://lin.ee/SDYjZsC" data-line="cta_line_final">
+            <span class="ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.9 3 2.8 6.4 2.8 10.6c0 3.8 3.3 7 7.7 7.6.3.06.7.2.8.46.1.24.06.6.03.85l-.13.8c-.04.24-.19.93.82.5 1-.42 5.4-3.2 7.4-5.5 1.35-1.5 2-3 2-4.7C21.4 6.4 17.2 3 12 3Z"/></svg></span><span class="txt"><span>LINEで60秒セルフチェック</span></span>
+          </a>
+          <p class="cta-note">5問・約60秒・面談なし。面談予約は必須ではありません。</p>
+        </div>
+
+        <ul class="trust" style="margin-top:28px">
           <li>オンライン対応</li>
           <li>無理な勧誘なし</li>
           <li>相談だけでも可</li>
@@ -1992,11 +2032,11 @@ h3,.h3{font-size:var(--fs-h3);font-weight:700;line-height:var(--lh-h3);color:var
 
       <div>
         <div class="ft__links">
-          <a href="{{運営会社URL}}">運営会社</a>
-          <a href="{{プライバシーポリシーURL}}">プライバシーポリシー</a>
-          <a href="{{特定商取引法URL}}">特定商取引法に基づく表記</a>
-          <a href="{{利用規約URL}}">利用規約</a>
-          <a href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_footer">お問い合わせ</a>
+          <a href="company.html#company">運営会社</a>
+          <a href="company.html#privacy">プライバシーポリシー</a>
+          <a href="company.html#tokushoho">特定商取引法に基づく表記</a>
+          <a href="terms.html">利用規約</a>
+          <a href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_footer">30分の無料個別診断</a>
         </div>
       </div>
     </div>
@@ -2015,7 +2055,7 @@ h3,.h3{font-size:var(--fs-h3);font-weight:700;line-height:var(--lh-h3);color:var
      MOBILE STICKY CTA
      ========================================================== -->
 <div class="sticky">
-  <a class="btn" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_mobile_sticky">無料診断を予約する</a>
+  <a class="btn" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_mobile_sticky">30分無料・個別診断を予約</a>
 </div>
 
 <script type="application/ld+json">
@@ -2023,7 +2063,7 @@ h3,.h3{font-size:var(--fs-h3);font-weight:700;line-height:var(--lh-h3);color:var
   "@context":"https://schema.org",
   "@type":"FAQPage",
   "mainEntity":[
-    {"@type":"Question","name":"無料相談だけでも大丈夫ですか？","acceptedAnswer":{"@type":"Answer","text":"はい。無料相談は、入会を前提に話を聞く場ではありません。現在の婚活でどこが止まっているか、何を変えるべきか、そもそもサポートが必要かを整理する時間です。相談後に入会しない判断をしても問題ありません。"}},
+    {"@type":"Question","name":"30分の無料個別診断だけでも大丈夫ですか？","acceptedAnswer":{"@type":"Answer","text":"はい。30分の無料個別診断は、入会を前提に話を進める場ではありません。担当者とGoogle Meetで、現在の婚活でどこが止まっているか、何を変えるべきか、そもそもサポートが必要かを整理します。診断後に入会しない判断をしても問題ありません。"}},
     {"@type":"Question","name":"交際経験がなくても大丈夫ですか？","acceptedAnswer":{"@type":"Answer","text":"はい。実際に、交際経験がまったくない方や、交際経験が一度だけという方も交際に至っています。これまでの経験量よりも、これから行動を整理し、実践できるかを重視しています。会話、メッセージ、デート等を具体的な行動に分けて支援します。"}},
     {"@type":"Question","name":"厳しくダメ出しされませんか？","acceptedAnswer":{"@type":"Answer","text":"人格や性格を否定することはありません。この行動は相手からどのように見えた可能性があるかを整理し、次にどう行動するかを一緒に考えます。"}},
     {"@type":"Question","name":"交際や成婚は保証されますか？","acceptedAnswer":{"@type":"Answer","text":"交際や成婚を保証するサービスではありません。一人ひとりの課題を整理し、行動を改善するための支援を提供します。結果には個人差があります。"}},
