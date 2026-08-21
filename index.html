@@ -136,7 +136,7 @@ h3{font-size:17px;font-weight:700;line-height:1.55;color:var(--t-head)}
 .cta-for--l{background:#F0FBF4;border-color:#BFE9CF;color:#0B7A3B}
 .on-dark .cta-for{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.2);color:#D5E2EE}
 .on-dark .cta-for--l{background:rgba(6,199,85,.14);border-color:rgba(6,199,85,.55);color:#7FE0A8}
-.cta-note{font-size:13px;line-height:1.7;color:var(--t-sub)}
+.cta-note{font-size:13px;line-height:1.7;color:#5C6873}
 .on-dark .cta-note{color:#A9BED0}
 .cta-blk{margin-top:34px}
 
@@ -251,7 +251,7 @@ h3{font-size:17px;font-weight:700;line-height:1.55;color:var(--t-head)}
 @media (min-width:768px){ .eq__t{flex:1 1 0;min-width:0;padding:18px 14px} }
 .eq__t b{font-size:16px;font-weight:700;line-height:1.5;color:#fff}
 @media (min-width:768px){ .eq__t b{font-size:18px} }
-.eq__t span{font-size:12px;font-weight:700;color:var(--gold);white-space:nowrap;
+.eq__t span{font-size:12px;font-weight:700;color:#EFC556;white-space:nowrap;
   padding:3px 11px;border-radius:999px;background:rgba(213,166,47,.16)}
 .eq__x{display:flex;align-items:center;justify-content:center;flex:none;line-height:1;
   font-style:normal;font-family:var(--font-en);font-size:17px;font-weight:700;color:var(--gold)}
@@ -311,6 +311,34 @@ h3{font-size:17px;font-weight:700;line-height:1.55;color:var(--t-head)}
 /* ============================================================
    実績 / 経歴
    ============================================================ */
+/* 設計した理由（メッセージ） */
+.why{max-width:700px;margin-inline:auto}
+.why__lead{
+  font-size:19px;font-weight:800;line-height:1.75;color:var(--t-head);
+  padding-left:16px;border-left:4px solid var(--gold);margin-bottom:26px;
+}
+@media (min-width:768px){ .why__lead{font-size:22px;padding-left:20px;margin-bottom:32px} }
+.why p{font-size:15.5px;line-height:2.05;color:var(--t-body)}
+@media (min-width:768px){ .why p{font-size:16.5px} }
+.why p + p{margin-top:20px}
+.why p.em{font-weight:700;color:var(--navy-deep)}
+.why p.why__end{
+  margin-top:30px;padding:20px 22px;border-radius:var(--r);
+  background:var(--navy-deep);color:#fff;text-align:center;
+  font-size:17px;font-weight:700;line-height:1.75;
+}
+@media (min-width:768px){ .why p.why__end{font-size:19px;padding:24px 28px} }
+.why p.why__end b{color:var(--gold)}
+
+/* からへ（対比） */
+.shift{margin-top:24px;display:grid;gap:9px;justify-items:center;text-align:center}
+.shift__a{font-size:15px;line-height:1.7;color:#A9BED0}
+@media (min-width:768px){ .shift__a{font-size:16px} }
+.shift__i{width:2px;height:20px;background:var(--gold);opacity:.7}
+.shift__b{font-size:17px;font-weight:800;line-height:1.7;color:#fff}
+@media (min-width:768px){ .shift__b{font-size:20px} }
+.shift__b b{color:var(--gold)}
+
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
 @media (min-width:640px){ .stats{gap:16px} }
 .stat{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.17);border-radius:var(--r);padding:16px 14px}
@@ -498,6 +526,11 @@ h3{font-size:17px;font-weight:700;line-height:1.55;color:var(--t-head)}
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5FZHVHXW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <a href="#main" class="sr-only">本文へスキップ</a>
 
 <header class="hd">
@@ -713,6 +746,35 @@ h3{font-size:17px;font-weight:700;line-height:1.55;color:var(--t-head)}
   </div>
 </section>
 
+
+<!-- ============ 5.5 設計した理由 ============ -->
+<section class="sec bg-warm" id="why">
+  <div class="wrap">
+    <div class="shead reveal why" style="margin-bottom:0">
+      <p class="eyebrow">代表からのメッセージ</p>
+      <h2>このプログラムを<br class="sp-br">設計した理由</h2>
+    </div>
+
+    <div class="why reveal" style="margin-top:26px">
+      <p class="why__lead">何がうまくいかなかったのか分からないまま、傷ついた気持ちだけを抱えて、次の本番へ向かってほしくない。</p>
+
+      <p>婚活では、LINEの返信が途絶えたり、交際終了の連絡が届いたりしても、理由までは分からないことがあります。具体的な振り返りがないまま次の人と会い、同じ結果を繰り返すうちに、「自分には魅力がないのかもしれない」と自信を失っていく人を、私は見てきました。</p>
+
+      <p class="em">でも、交際経験が少ないことは、人としての魅力が少ないことではありません。</p>
+
+      <p>本当は誠実で、相手を大切にしたい気持ちがあっても、それをどう伝え、どう距離を縮めればいいのかを教わる機会がなかっただけかもしれません。</p>
+
+      <p>会話、LINE、服装、相手との向き合い方。練習し、振り返り、少しずつ変えていけることはたくさんあります。</p>
+
+      <p class="em">私たちが目指すのは、あなたを別人に変えることではありません。<br>あなたがすでに持っている良さを見つけ、それが相手に届く形にしていくことです。</p>
+
+      <p>本当に好きになった人との可能性を、経験の少なさや、伝え方が分からないという理由だけで終わらせたくない。うまくいかなかったときこそ、一人で抱え込ませず、一緒に考え、次に変える一歩を決める。</p>
+
+      <p class="why__end">その思いを形にしたのが、<br class="sp-br"><b>アコード結婚相談所</b>です。</p>
+    </div>
+  </div>
+</section>
+
 <!-- ============ 5. 実績 ============ -->
 <section class="sec bg-navy on-dark" id="proof">
   <div class="wrap">
@@ -737,10 +799,16 @@ h3{font-size:17px;font-weight:700;line-height:1.55;color:var(--t-head)}
     <div class="who reveal">
       <p class="who__k">このプログラムを設計した人</p>
       <ul>
-        <li><b>婚活サービスの運営会社で、男性向け育成プログラムの責任者。</b>ゼロから設計し、1年間で23名を個別に指導しました。</li>
-        <li><b>前職で株式会社リクルートの経営企画部門に所属。</b>課題を分解し、実行できる形に落とし込む考え方が、手順づくりの土台です。</li>
-        <li><b>自身も、結婚相談所で配偶者と出会いました。</b>理想の結婚をどう実現したかについて、日経WOMANに記事が掲載されています。</li>
+        <li>婚活サービスの運営会社で、<b>男性向け婚活支援プログラムをゼロから設計し、事業責任者を担当。</b>1年間で23名を個別に支援し、60％以上が交際に発展。</li>
+        <li>前職では、<b>株式会社リクルートの正社員として経営企画プロジェクトに参画。</b>複雑な課題を分解し、実行できる手順に落とし込むための経験を積む。</li>
+        <li>支援する側である前に、<b>自身も結婚相談所を利用して配偶者と出会う。</b>その経験は、日本経済新聞社グループ発行の『日経WOMAN』にも掲載。</li>
       </ul>
+
+      <div class="shift">
+        <p class="shift__a">結果だけを受け取り、自信を失う婚活から。</p>
+        <span class="shift__i" aria-hidden="true"></span>
+        <p class="shift__b">理由を振り返り、練習し、<br>大切な人との関係を築く<b>力を育てる婚活へ。</b></p>
+      </div>
     </div>
 
     <div class="spot reveal">
@@ -1005,7 +1073,11 @@ h3{font-size:17px;font-weight:700;line-height:1.55;color:var(--t-head)}
 /* ============================================================================
    計測設定 ─ ここにIDを入れるだけで読み込まれます（空欄なら読み込みません）
    ============================================================================ */
-var LP_ANALYTICS = { ga4Id:'', gtmId:'', clarityId:'' };
+var LP_ANALYTICS = {
+  gtmId:     'GTM-5FZHVHXW',  /* Googleタグマネージャー（設定済み） */
+  ga4Id:     '',              /* GTM側でGA4を設定するため、ここは空のまま */
+  clarityId: ''               /* GTM側でClarityを設定する場合も空のまま */
+};
 
 (function (a) {
   window.dataLayer = window.dataLayer || [];
@@ -1215,8 +1287,9 @@ var FAQS = [
   }, { passive: true });
   chk();
 
-  var NAMES = { hero:'ファーストビュー', pick:'悩みのタイプ', meet:'IBJの出会い', support:'支援内容',
-    proof:'実績', cases:'事例', price:'料金', fit:'向き不向き', consult:'無料個別診断', faq:'FAQ', final:'最終CTA' };
+  var NAMES = { hero:'ファーストビュー', safe:'安心材料', pick:'悩みのタイプ', meet:'IBJの出会い',
+    support:'支援内容', why:'設計した理由', proof:'実績', cases:'事例', price:'料金',
+    fit:'向き不向き', consult:'無料個別診断', faq:'FAQ', final:'最終CTA' };
   var last = 'ファーストビュー';
   if ('IntersectionObserver' in window) {
     var so = new IntersectionObserver(function (es) {
