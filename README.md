@@ -1,4 +1,4 @@
-# アコード結婚相談所 LP Ver 3.15.1（FAQ追加・GA4測定ID設定）
+# アコード結婚相談所 LP Ver 3.15.2（FAQ追加・計測をGTM経由に一本化）
 
 スマートフォンで一気に読み切れるよう、全面的に再構築したLPです。
 
@@ -1378,11 +1378,27 @@ LPの実装は完了しているので、あとはGTM管理画面での作業に
 
 ---
 
-## Ver 3.15.1 の変更点
+## Ver 3.15.2 の変更点
 
-`LP_CONFIG.ga4Id` にGA4測定ID **G-N2QDZ2RSWV** を設定しました。ページ読込時にgtag.jsが直接読み込まれ、ページビューと各イベント（CTAクリック、FAQ開閉、スクロール等）がGA4へ送信されます。
+計測構成を**GTM経由に一本化**しました。LP側で直接読み込むのはGTMのみです。
 
-**注意**：GTM（GTM-5FZHVHXW）側にも「GA4設定タグ」を作成している場合、同じ測定IDだと**二重計測**になります。その場合は、GTM側のGA4設定タグを一時停止するか、LP側の `ga4Id` を空文字に戻してGTM経由に一本化してください。
+```
+ホームページ
+  └ GTM-5FZHVHXW
+      ├ GA4：G-N2QDZ2RSWV（GTM側で設定済み）
+      └ Microsoft Clarity（GTM側で設定済み）
+```
+
+```js
+var LP_ANALYTICS = {
+  gtmId:     'GTM-5FZHVHXW',
+  ga4Id:     '',
+  clarityId: ''
+};
+```
+
+- `ga4Id` と `clarityId` は空欄のため、gtag.js・Clarityの直接読み込みは行われません（二重計測なし）
+- LP内のイベント（CTAクリック、FAQ開閉、スクロール等）は `dataLayer` へpushされるため、GTMのGoogleタグ経由でそのままGA4に届きます
 
 ---
 
