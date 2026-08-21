@@ -331,13 +331,19 @@ h3{font-size:17px;font-weight:700;line-height:1.55;color:var(--t-head)}
 .why p.why__end b{color:var(--gold)}
 
 /* からへ（対比） */
-.shift{margin-top:24px;display:grid;gap:9px;justify-items:center;text-align:center}
+.shift{margin-top:24px;display:grid;gap:16px;justify-items:center;text-align:center}
 .shift__a{font-size:15px;line-height:1.7;color:#A9BED0}
 @media (min-width:768px){ .shift__a{font-size:16px} }
-.shift__i{width:2px;height:20px;background:var(--gold);opacity:.7}
 .shift__b{font-size:17px;font-weight:800;line-height:1.7;color:#fff}
 @media (min-width:768px){ .shift__b{font-size:20px} }
 .shift__b b{color:var(--gold)}
+
+.shift--light{margin:28px 0 26px;padding:22px 18px;border-radius:var(--r);
+  background:#fff;border:1px solid var(--line-strong)}
+@media (min-width:768px){ .shift--light{padding:26px 24px} }
+.shift--light .shift__a{color:var(--t-sub)}
+.shift--light .shift__b{color:var(--navy-deep)}
+.shift--light .shift__b b{color:#8A6510}
 
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
 @media (min-width:640px){ .stats{gap:16px} }
@@ -803,12 +809,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li>前職では、<b>株式会社リクルートの正社員として経営企画プロジェクトに参画。</b>複雑な課題を分解し、実行できる手順に落とし込むための経験を積む。</li>
         <li>支援する側である前に、<b>自身も結婚相談所を利用して配偶者と出会う。</b>その経験は、日本経済新聞社グループ発行の『日経WOMAN』にも掲載。</li>
       </ul>
-
-      <div class="shift">
-        <p class="shift__a">結果だけを受け取り、自信を失う婚活から。</p>
-        <span class="shift__i" aria-hidden="true"></span>
-        <p class="shift__b">理由を振り返り、練習し、<br>大切な人との関係を築く<b>力を育てる婚活へ。</b></p>
-      </div>
     </div>
 
     <div class="spot reveal">
@@ -1022,8 +1022,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap" style="max-width:620px">
     <div class="shead reveal">
       <h2>今の婚活を、<br>感覚のまま続けない。</h2>
-      <p class="lead">出会いが少ないのか、出会った後で止まっているのか。原因が分からないままでは、次の出会いでも同じところで止まります。まずは30分の無料個別診断で、現在の課題と次の一手を整理しましょう。</p>
+      <p class="lead">出会いが少ないのか、出会った後で止まっているのか。原因が分からないままでは、次の出会いでも同じところで止まります。</p>
     </div>
+
+    <div class="shift shift--light reveal">
+      <p class="shift__a">結果だけを受け取り、自信を失う婚活から。</p>
+      <p class="shift__b">理由を振り返り、練習し、<br><b>大切な人との関係を築く力を育てる婚活へ。</b></p>
+    </div>
+
+    <p class="lead reveal" style="text-align:center;max-width:none">まずは30分の無料個別診断で、現在の課題と次の一手を整理しましょう。</p>
     <div class="reveal">
       <div class="cta-g">
         <span class="cta-for">今すぐ具体的に相談したい方</span>
