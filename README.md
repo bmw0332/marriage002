@@ -1,4 +1,4 @@
-# アコード結婚相談所 LP Ver 3.15.2（FAQ追加・計測をGTM経由に一本化）
+# アコード結婚相談所 LP Ver 3.16.0（正式URL統一・robots.txt / sitemap.xml 追加）
 
 スマートフォンで一気に読み切れるよう、全面的に再構築したLPです。
 
@@ -12,8 +12,10 @@
 | `company.html` | 運営会社・プライバシーポリシー・特定商取引法 | ◎ |
 | `terms.html` | 利用規約 | ◎ |
 | `ogp.jpg` | SNSシェア用画像 | △ |
+| `robots.txt` | クローラー向け設定・サイトマップの場所 | ◎ |
+| `sitemap.xml` | Googleへ送信するURL一覧 | ◎ |
 
-4ファイルを同じ階層に置いてください。ビルド不要、外部ライブラリなしです。
+6ファイルを同じ階層（リポジトリのルート）に置いてください。ビルド不要、外部ライブラリなしです。
 
 ---
 
@@ -1375,6 +1377,91 @@ LPの実装は完了しているので、あとはGTM管理画面での作業に
 - コントラストAA未達0件
 - ページの長さはスマホ（375px）で21.4画面（矢印削除で前版から-0.1）
 
+
+---
+
+## Ver 3.16.0 の変更点
+
+### ① 正式URLの統一
+
+仮置き `{{公開URL}}` を **https://accord-marriage.jp/** に置き換えました。
+
+| 箇所 | 変更後 |
+|---|---|
+| `<link rel="canonical">` | `https://accord-marriage.jp/` |
+| `<meta property="og:url">` | `https://accord-marriage.jp/` |
+| `<meta property="og:image">` | `https://accord-marriage.jp/ogp.jpg` |
+
+OGP画像は相対パス `ogp.jpg` のままだと、LINEやX（旧Twitter）でシェアした際に画像が表示されないことがあります（SNS側のクローラーは絶対URLを要求するため）。今回、絶対URLに変更しています。
+
+`index.html` 内に仮置き文字列は残っていません（`company.html` と `terms.html` には事業者情報・規約本文の仮置きが残っています）。
+
+### ② robots.txt / sitemap.xml の追加
+
+**robots.txt**（全ページのクロールを許可し、サイトマップの場所を伝える）
+
+```
+User-agent: *
+Allow: /
+
+Sitemap: https://accord-marriage.jp/sitemap.xml
+```
+
+**sitemap.xml**（公開3ページを記載）
+
+| URL | 優先度 |
+|---|---|
+| `https://accord-marriage.jp/` | 1.0 |
+| `https://accord-marriage.jp/company.html` | 0.3 |
+| `https://accord-marriage.jp/terms.html` | 0.3 |
+
+`lastmod` は 2026-08-22 で記載しています。LPを大きく更新した際は、この日付を更新してください。
+
+---
+
+## Search Console の登録手順
+
+### 事前確認：独自ドメインの接続
+
+`accord-marriage.jp` をGitHub Pagesに接続済みでない場合は、先にこちらを済ませてください。
+
+1. リポジトリの **Settings → Pages → Custom domain** に `accord-marriage.jp` を入力して保存
+2. ドメインを取得した会社（お名前.com、ムームードメイン等）の管理画面でDNSを設定
+   - `A` レコード：`185.199.108.153` / `185.199.109.153` / `185.199.110.153` / `185.199.111.153`
+   - `www` を使う場合は `CNAME` レコードで `bmw0332.github.io`
+3. 反映まで数十分〜数時間かかります。反映後、Settings → Pages の **Enforce HTTPS** にチェック
+
+### Search Console の登録
+
+1. https://search.google.com/search-console/ をGoogleアカウントで開く
+2. 左上「プロパティを追加」→ **ドメイン** を選択し、`accord-marriage.jp` を入力
+   - ドメイン単位で登録すると、httpとhttps、wwwのあり／なしをまとめて計測できます
+3. 表示された **TXTレコード** を、ドメイン管理画面のDNS設定に追加
+4. Search Consoleに戻って「確認」をクリック（DNS反映まで時間がかかる場合は、しばらく置いてから再実行）
+
+※ DNS設定が難しい場合は、プロパティタイプで「URLプレフィックス」を選び、`https://accord-marriage.jp/` を入力してHTMLタグ方式で確認する方法もあります。その場合、指定された `<meta name="google-site-verification" ...>` を `index.html` の `<head>` 内に貼り付けてください。
+
+### サイトマップの送信
+
+1. 登録完了後、左メニューの **サイトマップ** を開く
+2. 「新しいサイトマップの追加」に `sitemap.xml` と入力して送信
+3. ステータスが「成功しました」になれば完了
+
+### インデックス登録のリクエスト
+
+1. 上部の検索窓に `https://accord-marriage.jp/` を入力してEnter（URL検査）
+2. 「URLがGoogleに登録されていません」と出たら **インデックス登録をリクエスト** をクリック
+3. 検索結果への反映まで、通常は数日から2週間程度かかります
+
+### 登録後に見るところ
+
+| メニュー | 分かること |
+|---|---|
+| 検索パフォーマンス | どの検索キーワードで表示・クリックされたか |
+| ページのインデックス登録 | どのページが登録され、どのページが除外されたか |
+| ページエクスペリエンス | 表示速度やモバイル対応の問題 |
+
+公開直後はデータが溜まっていないため、1〜2週間ほど経ってから確認してください。
 
 ---
 
