@@ -518,8 +518,12 @@ h3{font-size:17px;font-weight:700;line-height:1.55;color:var(--t-head)}
 .ft__cp{margin-top:14px;font-size:12px;color:#8FA6BB}
 
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:130;height:70px;background:#fff;
-  border-top:1px solid var(--line);display:flex;align-items:center;padding:0 14px}
+  border-top:1px solid var(--line);display:flex;align-items:center;padding:0 14px;
+  transform:translateY(100%);opacity:0;visibility:hidden;
+  transition:transform .28s ease,opacity .28s ease,visibility .28s}
+.sticky.is-on{transform:translateY(0);opacity:1;visibility:visible}
 .sticky .btn{min-height:50px;font-size:15.5px;box-shadow:none}
+@media (prefers-reduced-motion:reduce){ .sticky{transition-duration:.01ms} }
 @media (min-width:768px){ .sticky{display:none} }
 
 .reveal{transition:opacity .5s ease,transform .5s ease}
@@ -1380,6 +1384,29 @@ var FAQS = [
       es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('on'); io.unobserve(en.target); } });
     }, { rootMargin: '0px 0px -6% 0px', threshold: 0.05 });
     Array.prototype.forEach.call(tg, function (el) { io.observe(el); });
+  }
+
+  /* ---- 追従CTA（ヒーロー／最終CTAが見えている間は出さない） ---- */
+  var sticky_ = d.querySelector('.sticky');
+  if (sticky_) {
+    var guards = [];
+    ['cta-timerex-hero', 'cta-timerex-final'].forEach(function (id) {
+      var el = d.getElementById(id); if (el) guards.push(el);
+    });
+    if (!guards.length || !('IntersectionObserver' in window)) {
+      sticky_.classList.add('is-on');
+    } else {
+      var vis = [];
+      var go = new IntersectionObserver(function (es) {
+        es.forEach(function (en) {
+          var i = guards.indexOf(en.target);
+          vis[i] = en.isIntersecting;
+        });
+        var any = vis.some(function (v) { return v; });
+        sticky_.classList.toggle('is-on', !any);
+      }, { threshold: 0 });
+      guards.forEach(function (el) { go.observe(el); });
+    }
   }
 
   /* ---- ページ内アンカー ---- */
