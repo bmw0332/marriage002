@@ -46,7 +46,7 @@ body{
   margin:0;padding-top:var(--hd);padding-bottom:78px;
   font-family:var(--font-jp);font-size:16px;line-height:1.8;
   color:var(--t-body);background:var(--white);
-  word-break:normal;line-break:strict;overflow-wrap:anywhere;overflow-x:hidden;font-feature-settings:"palt" 1;
+  word-break:normal;line-break:strict;overflow-wrap:break-word;overflow-x:hidden;font-feature-settings:"palt" 1;
 }
 @media (min-width:768px){ body{padding-bottom:0} }
 img{max-width:100%;height:auto;display:block}
@@ -59,6 +59,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .on-dark :focus-visible{outline-color:var(--gold)}
 p,li{text-wrap:pretty}
 .pw > span{display:inline-block}
+.pwb{display:inline-block}
+.pwn{white-space:nowrap}
 
 .wrap{width:min(var(--wrap),100% - 32px);margin-inline:auto}
 @media (min-width:768px){ .wrap{width:min(var(--wrap),100% - 56px)} }
@@ -588,13 +590,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a class="btn" id="cta-timerex-hero" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_hero">
           <span class="pw"><span>30分の無料個別診断を</span><span>予約する</span></span><i class="arw" aria-hidden="true"></i>
         </a>
-        <p class="cta-note">担当者とのオンライン面談で、課題・優先順位・次の一手を整理します。</p>
+        <p class="cta-note pw"><span>担当者とのオンライン面談で、</span><span>課題・優先順位・次の一手を整理します。</span></p>
       </div>
 
       <div class="cta-g">
         <span class="cta-for cta-for--l">面談予約するか迷っている方</span>
         <a class="btn-line" id="cta-line-hero" href="https://lin.ee/SDYjZsC" data-line="cta_line_hero"><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.9 3 2.8 6.4 2.8 10.6c0 3.8 3.3 7 7.7 7.6.3.06.7.2.8.46.1.24.06.6.03.85l-.13.8c-.04.24-.19.93.82.5 1-.42 5.4-3.2 7.4-5.5 1.35-1.5 2-3 2-4.7C21.4 6.4 17.2 3 12 3Z"/></svg></span><span>LINEで60秒セルフチェック</span></a>
-        <p class="cta-note">5問の質問に答えるだけで、いま最初に見直すべきポイントが分かります。面談予約は必須ではありません。</p>
+        <p class="cta-note pw"><span>5問の質問に答えるだけで、</span><span>いま最初に見直すべきポイントが分かります。</span><span>面談予約は必須ではありません。</span></p>
       </div>
     </div>
 
@@ -751,7 +753,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a class="btn" id="cta-timerex-cycle" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_after_method">
           <span class="pw"><span>30分の無料個別診断を</span><span>予約する</span></span><i class="arw" aria-hidden="true"></i>
         </a>
-        <p class="cta-note" style="text-align:center">担当者と話しながら、現在の詰まりポイントを言語化します。</p>
+        <p class="cta-note pw" style="text-align:center"><span>担当者と話しながら、</span><span>現在の詰まりポイントを言語化します。</span></p>
       </div>
     </div>
   </div>
@@ -923,7 +925,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a class="btn" id="cta-timerex-price" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_pricing">
           <span class="pw"><span>料金と支援内容を</span><span>無料個別診断で確認する</span></span><i class="arw" aria-hidden="true"></i>
         </a>
-        <p class="cta-note" style="text-align:center">金額や内容を確認したうえで、ご判断ください。無理な勧誘は行いません。</p>
+        <p class="cta-note pw" style="text-align:center"><span>金額や内容を確認したうえで、</span><span>ご判断ください。</span><span>無理な勧誘は行いません。</span></p>
       </div>
     </div>
   </div>
@@ -1000,12 +1002,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a class="btn" id="cta-timerex-consultation" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_consult">
           <span class="pw"><span>30分の無料個別診断を</span><span>予約する</span></span><i class="arw" aria-hidden="true"></i>
         </a>
-        <p class="cta-note">オンライン面談で30分。相談だけでも問題ありません。</p>
+        <p class="cta-note pw"><span>オンライン面談で30分。</span><span>相談だけでも問題ありません。</span></p>
       </div>
       <div class="cta-g">
         <span class="cta-for cta-for--l">面談予約するか迷っている方へ</span>
         <a class="btn-line" id="cta-line-consultation" href="https://lin.ee/SDYjZsC" data-line="cta_line_consultation"><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.9 3 2.8 6.4 2.8 10.6c0 3.8 3.3 7 7.7 7.6.3.06.7.2.8.46.1.24.06.6.03.85l-.13.8c-.04.24-.19.93.82.5 1-.42 5.4-3.2 7.4-5.5 1.35-1.5 2-3 2-4.7C21.4 6.4 17.2 3 12 3Z"/></svg></span><span>LINEで60秒セルフチェック</span></a>
-        <p class="cta-note">5問の質問に答えるだけで、改善の候補が分かります。相談前の整理にお使いください。</p>
+        <p class="cta-note pw"><span>5問の質問に答えるだけで、</span><span>改善の候補が分かります。</span><span>相談前の整理にお使いください。</span></p>
       </div>
     </div>
   </div>
@@ -1042,12 +1044,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a class="btn" id="cta-timerex-final" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_final">
           <span class="pw"><span>30分の無料個別診断を</span><span>予約する</span></span><i class="arw" aria-hidden="true"></i>
         </a>
-        <p class="cta-note">担当者とのオンライン面談で、課題・優先順位・次の一手を整理します。</p>
+        <p class="cta-note pw"><span>担当者とのオンライン面談で、</span><span>課題・優先順位・次の一手を整理します。</span></p>
       </div>
       <div class="cta-g">
         <span class="cta-for cta-for--l">面談予約するか迷っている方</span>
         <a class="btn-line" id="cta-line-final" href="https://lin.ee/SDYjZsC" data-line="cta_line_final"><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.9 3 2.8 6.4 2.8 10.6c0 3.8 3.3 7 7.7 7.6.3.06.7.2.8.46.1.24.06.6.03.85l-.13.8c-.04.24-.19.93.82.5 1-.42 5.4-3.2 7.4-5.5 1.35-1.5 2-3 2-4.7C21.4 6.4 17.2 3 12 3Z"/></svg></span><span>LINEで60秒セルフチェック</span></a>
-        <p class="cta-note">5問の質問に答えるだけで、いま最初に見直すべきポイントが分かります。面談予約は必須ではありません。</p>
+        <p class="cta-note pw"><span>5問の質問に答えるだけで、</span><span>いま最初に見直すべきポイントが分かります。</span><span>面談予約は必須ではありません。</span></p>
       </div>
     </div>
   </div>
@@ -1374,6 +1376,66 @@ var FAQS = [
     try { out = /^https?:/i.test(a.href) && a.hostname !== location.hostname; } catch (err) {}
     track('link_click', { link_url: a.href, link_text: (a.textContent || '').trim().slice(0, 60), is_outbound: out });
   });
+
+  /* ---- 日本語の改行位置を整える ---- */
+  /* 句読点の後ろでだけ折り返し、カタカナ語・英数字・数量表現は途中で割らない */
+  var PW_SPLIT  = /[^、。！？・：；]*[、。！？・：；]+/g;
+  /* 句読点のない長い節は、助詞（を・に・へ・は）の後ろで二次分割する。
+     直後が活用語尾の場合は「から」「ながら」等を割らないよう見送る */
+  var PW_SUB    = /([^、。！？]{5,}?[をにへは])(?![らりるれろっずぬま]|もと|はじめ|つい|おい|おけ|とっ|関し|対し|よっ|よれ|沿っ|加え|わたっ|比べ|向け|通じ|基づ|限り|応じ|際し|あたっ|つき|なっ|つれ|先立|即し|反し)(?=[^、。！？]{5,})/g;
+  var PW_NOWRAP = /[0-9][0-9,.]*(?:分|名|円|件|項目|回|人|歳|か月|年|月|日|％|%)?|[A-Za-z][A-Za-z0-9.'-]*|[ァ-ヶ][ァ-ヶー]+/g;
+  var PW_JP     = /[ぁ-んァ-ヶ一-龥]/;
+
+  function pwFrag(text) {
+    var frag = d.createDocumentFragment();
+    var segs = text.match(PW_SPLIT) || [];
+    var used = segs.join('');
+    if (used.length < text.length) segs.push(text.slice(used.length));
+    var out = [];
+    segs.forEach(function (seg) {
+      if (seg.length > 16) { PW_SUB.lastIndex = 0; out = out.concat(seg.replace(PW_SUB, '$1\u0000').split('\u0000')); }
+      else out.push(seg);
+    });
+    out.forEach(function (seg) {
+      if (!seg) return;
+      var box = d.createElement('span');
+      box.className = 'pwb';
+      var last = 0, m;
+      PW_NOWRAP.lastIndex = 0;
+      while ((m = PW_NOWRAP.exec(seg))) {
+        if (m.index > last) box.appendChild(d.createTextNode(seg.slice(last, m.index)));
+        var kw = d.createElement('span');
+        kw.className = 'pwn';
+        kw.textContent = m[0];
+        box.appendChild(kw);
+        last = m.index + m[0].length;
+      }
+      if (last < seg.length) box.appendChild(d.createTextNode(seg.slice(last)));
+      frag.appendChild(box);
+    });
+    return frag;
+  }
+
+  function phraseWrap(sel) {
+    if (!d.createTreeWalker || !window.getComputedStyle) return;
+    Array.prototype.forEach.call(d.querySelectorAll(sel), function (root) {
+      if (root.closest('.pw')) return;
+      var w = d.createTreeWalker(root, NodeFilter.SHOW_TEXT, null), nodes = [], t;
+      while ((t = w.nextNode())) nodes.push(t);
+      nodes.forEach(function (node) {
+        var txt = node.nodeValue;
+        if (!txt || txt.length < 8 || !PW_JP.test(txt)) return;
+        var par = node.parentNode;
+        if (!par || par.nodeType !== 1) return;
+        if (par.closest('.pw, .pwb, .pwn')) return;
+        /* flex/grid の直下テキストは、匿名ボックスの都合で触らない */
+        var dsp = window.getComputedStyle(par).display;
+        if (dsp === 'flex' || dsp === 'grid' || dsp === 'inline-flex') return;
+        par.replaceChild(pwFrag(txt), node);
+      });
+    });
+  }
+  try { phraseWrap('main p, main li, main dd, .ft__note'); } catch (e) {}
 
   /* ---- スクロール表示 ---- */
   var tg = d.querySelectorAll('.reveal');
