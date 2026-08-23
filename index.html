@@ -235,7 +235,7 @@ h3{font-size:17px;font-weight:700;line-height:1.55;color:var(--t-head)}
   font-size:14.5px;font-weight:700;color:var(--navy-deep);line-height:1.5}
 .chips li b{font-weight:800}
 .chips li .num{font-size:19px}
-.chips li span{font-size:11.5px;font-weight:500;color:var(--t-sub)}
+.chips li > span{font-size:11.5px;font-weight:500;color:var(--t-sub)}
 
 /* かけ算の式 */
 .eq{padding:22px 18px;border-radius:var(--r);background:var(--navy-deep);color:#fff}
@@ -255,7 +255,7 @@ h3{font-size:17px;font-weight:700;line-height:1.55;color:var(--t-head)}
 @media (min-width:768px){ .eq__t{flex:1 1 0;min-width:0;padding:18px 14px} }
 .eq__t b{font-size:16px;font-weight:700;line-height:1.5;color:#fff}
 @media (min-width:768px){ .eq__t b{font-size:18px} }
-.eq__t span{font-size:12px;font-weight:700;color:#EFC556;white-space:nowrap;
+.eq__t > span{font-size:12px;font-weight:700;color:#EFC556;white-space:nowrap;
   padding:3px 11px;border-radius:999px;background:rgba(213,166,47,.16)}
 .eq__x{display:flex;align-items:center;justify-content:center;flex:none;line-height:1;
   font-style:normal;font-family:var(--font-en);font-size:17px;font-weight:700;color:var(--gold)}
@@ -310,7 +310,7 @@ h3{font-size:17px;font-weight:700;line-height:1.55;color:var(--t-head)}
 .svc .i{display:flex;align-items:center;justify-content:center;width:38px;height:38px;
   border-radius:10px;background:var(--pale);color:var(--navy)}
 .svc b{display:block;font-size:15.5px;font-weight:700;color:var(--t-head);line-height:1.5}
-.svc span{display:block;margin-top:4px;font-size:13.5px;line-height:1.7;color:var(--t-body)}
+.svc li > span{display:block;margin-top:4px;font-size:13.5px;line-height:1.7;color:var(--t-body)}
 
 /* ============================================================
    実績 / 経歴
@@ -357,7 +357,7 @@ h3{font-size:17px;font-weight:700;line-height:1.55;color:var(--t-head)}
 .stat__v{display:flex;align-items:baseline;gap:3px;color:var(--gold)}
 .stat__v b{font-family:var(--font-en);font-size:40px;font-weight:700;line-height:1}
 @media (min-width:768px){ .stat__v b{font-size:52px} }
-.stat__v span{font-size:15px;font-weight:700}
+.stat__v > span{font-size:15px;font-weight:700}
 .cond{padding:14px 16px;border-radius:12px;background:rgba(255,255,255,.07);
   border:1px solid rgba(255,255,255,.17);font-size:14px;line-height:1.8;color:#D5E2EE}
 .cond b{color:var(--gold)}
@@ -424,7 +424,7 @@ h3{font-size:17px;font-weight:700;line-height:1.55;color:var(--t-head)}
 .price__v{display:flex;align-items:baseline;gap:2px;color:var(--navy-deep)}
 .price__v b{font-family:var(--font-en);font-size:22px;font-weight:700;line-height:1.1}
 @media (min-width:768px){ .price__v b{font-size:26px} }
-.price__v span{font-size:13px;font-weight:700}
+.price__v > span{font-size:13px;font-weight:700}
 .price__v small{font-size:11.5px;font-weight:500;color:var(--t-sub);margin-left:2px}
 .price__s{margin-top:5px;font-size:11.5px;line-height:1.6;color:var(--t-sub)}
 .price__tot{padding:16px 16px;background:var(--pale);border-top:1px solid var(--line)}
@@ -460,13 +460,13 @@ h3{font-size:17px;font-weight:700;line-height:1.55;color:var(--t-head)}
   background:var(--gold);color:var(--navy-deep);font-family:var(--font-en);font-size:12px;font-weight:700;z-index:1}
 .prog__f li:not(:last-child)::after{content:"";position:absolute;left:11px;top:28px;bottom:4px;
   width:2px;background:var(--gold);opacity:.45}
-.prog__f li span{display:block;font-size:15.5px;font-weight:700;color:#fff;line-height:1.55}
-@media (min-width:768px){ .prog__f li span{font-size:16.5px} }
+.prog__f li > span{display:block;font-size:15.5px;font-weight:700;color:#fff;line-height:1.55}
+@media (min-width:768px){ .prog__f li > span{font-size:16.5px} }
 .prog__f li small{display:block;margin-top:5px;font-size:13px;color:#C3D2DF;line-height:1.75}
 @media (min-width:768px){ .prog__f li small{font-size:13.5px} }
 
 .incl li b{font-weight:700;color:var(--t-head)}
-.incl li span{display:block;margin-top:4px;font-size:12.5px;line-height:1.7;color:var(--t-sub)}
+.incl li > span{display:block;margin-top:4px;font-size:12.5px;line-height:1.7;color:var(--t-sub)}
 .incl li.st > b::after{content:"★";color:var(--gold-hover);font-size:10px;margin-left:4px;vertical-align:.2em}
 
 /* 折りたたみ */
@@ -1416,6 +1416,23 @@ var FAQS = [
     return frag;
   }
 
+  /* 注入したspanに別のCSSが当たる場所では処理を見送る（レイアウト崩れの予防） */
+  function pwSafe(par) {
+    if (par.__pwSafe !== undefined) return par.__pwSafe;
+    var probe = d.createElement('span');
+    probe.className = 'pwb';
+    probe.textContent = '\u200b';
+    par.appendChild(probe);
+    var a = window.getComputedStyle(probe), b = window.getComputedStyle(par), ok = true;
+    if (a.display && a.display !== 'inline-block') ok = false;
+    if (a.fontSize && b.fontSize && a.fontSize !== b.fontSize) ok = false;
+    if (a.fontWeight && b.fontWeight && a.fontWeight !== b.fontWeight) ok = false;
+    if (parseFloat(a.marginTop) || parseFloat(a.marginLeft)) ok = false;
+    par.removeChild(probe);
+    par.__pwSafe = ok;
+    return ok;
+  }
+
   function phraseWrap(sel) {
     if (!d.createTreeWalker || !window.getComputedStyle) return;
     Array.prototype.forEach.call(d.querySelectorAll(sel), function (root) {
@@ -1431,6 +1448,7 @@ var FAQS = [
         /* flex/grid の直下テキストは、匿名ボックスの都合で触らない */
         var dsp = window.getComputedStyle(par).display;
         if (dsp === 'flex' || dsp === 'grid' || dsp === 'inline-flex') return;
+        if (!pwSafe(par)) return;
         par.replaceChild(pwFrag(txt), node);
       });
     });

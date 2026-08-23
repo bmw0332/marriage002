@@ -1380,6 +1380,61 @@ LPの実装は完了しているので、あとはGTM管理画面での作業に
 
 ---
 
+## Ver 4.8.1 の変更点（不具合修正）
+
+Ver 4.8.0で「そのほかに含まれるもの」などの箇条書きが、**1語ずつ改行される状態**になっていました。修正済みです。
+
+### 原因
+
+改行制御のために挿入した `span` に、**既存のCSSが誤爆**していました。
+
+```css
+.incl li span{ display:block; margin-top:4px; font-size:12.5px }
+```
+
+このセレクタは説明文の `<span>` を対象にしたものですが、その内側に挿入した `.pwb` にも当たります。`.incl li span`（詳細度 0-2-1）が `.pwb`（0-1-0）に優先するため、`display:inline-block` が `block` で上書きされ、断片ごとに改行されていました。
+
+同様のセレクタが**7件**ありました。
+
+| セレクタ | 影響 |
+|---|---|
+| `.incl li span` | display:block、font-size、margin-top |
+| `.prog__f li span` | display:block、font-size、font-weight |
+| `.svc span` | display:block、margin-top、font-size |
+| `.chips li span` | font-size、font-weight |
+| `.eq__t span` | font-size、font-weight |
+| `.stat__v span` | font-size、font-weight |
+| `.price__v span` | font-size、font-weight |
+
+### 修正内容
+
+**① 7件のセレクタを直下子（`>`）に限定**
+
+```css
+.incl li > span{ display:block; … }
+```
+
+対象の `<span>` はいずれも直下の子であることを確認済みです。挿入した `.pwb` は孫要素になるため、もう当たりません。既存の見た目は変わりません。
+
+**② 実行時の安全弁を追加**
+
+見落としや将来のCSS追加に備え、処理前に検査用の `span` を挿入して、親と同じ見た目になるかを確認します。`display` が `inline-block` にならない、文字サイズや太さが変わる、余白が付く——いずれかに該当する場所は**処理を見送ります**。
+
+結果は要素ごとにキャッシュするため、負荷はごくわずかです。
+
+### 検証結果
+
+| 項目 | 結果 |
+|---|---|
+| 誤爆しうる子孫spanセレクタ | **0件**（修正前7件） |
+| display が inline-block でない挿入span | **0件** |
+| 親と文字サイズ・太さ・余白がずれた挿入span | **0件** |
+| 意図した7つのspanのスタイル | すべて修正前と同一 |
+| 断片数／語保護 | 605／201 |
+| FAQ20問・事例3件 | 正常 |
+
+---
+
 ## Ver 4.8.0 の変更点
 
 Ver 4.7.0ではCTA補足文8か所を手作業で直しましたが、同じ問題が本文全体にありました。**個別対応をやめ、仕組みで解決しています。**
