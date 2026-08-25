@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>本番前に練習する婚活支援｜アコード結婚相談所</title>
+<title>「会えない、続かない」を変えるアコード結婚相談所・IBJ正規加盟店</title>
 <meta name="description" content="実績のある実践型の婚活コーチングを行う結婚相談所です。そもそも会えない、会えても次につながらない悩みに対し、プロフィール、お見合い、会話、LINE、デートを具体的に改善します。面談予約を迷っている方向けのLINE60秒セルフチェックと、担当者と話す30分の無料個別診断を用意しています。">
 <link rel="canonical" href="https://accord-marriage.jp/">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
-<meta property="og:title" content="なかなか会えない。会えても、続かない。｜アコード結婚相談所">
+<meta property="og:title" content="「会えない、続かない」を変える結婚相談所">
 <meta property="og:description" content="出会いを、関係に変える婚活支援。まずはLINEで60秒セルフチェック。具体的に相談したい方は、担当者と話す30分の無料個別診断へ。">
 <meta property="og:image" content="https://accord-marriage.jp/ogp.jpg">
 <meta property="og:image:width" content="1200">
@@ -1381,25 +1381,28 @@ var FAQS = [
   /* 句読点の後ろでだけ折り返し、カタカナ語・英数字・数量表現は途中で割らない */
   var PW_SPLIT  = /[^、。！？・：；]*[、。！？・：；]+/g;
   /* 句読点のない長い節は、助詞（を・に・へ・は）の後ろで二次分割する。
-     直後が活用語尾の場合は「から」「ながら」等を割らないよう見送る */
-  var PW_SUB    = /([^、。！？]{5,}?[をにへは])(?![らりるれろっずぬま]|もと|はじめ|つい|おい|おけ|とっ|関し|対し|よっ|よれ|沿っ|加え|わたっ|比べ|向け|通じ|基づ|限り|応じ|際し|あたっ|つき|なっ|つれ|先立|即し|反し)(?=[^、。！？]{5,})/g;
+     直後がひらがなの場合は「から」「により」「をもとに」等の可能性があるため見送る。
+     直後が複合助詞をつくる漢字の場合も同様（に沿って・に基づく・に関する等） */
+  var PW_SUB    = /([^、。！？]{5,}?[をにへは])(?=[^ぁ-んー、。！？])(?![沿基関対際伴加限即反当応通向比先渡])(?=[^、。！？]{5,})/g;
   var PW_NOWRAP = /[0-9][0-9,.]*(?:分|名|円|件|項目|回|人|歳|か月|年|月|日|％|%)?|[A-Za-z][A-Za-z0-9.'-]*|[ァ-ヶ][ァ-ヶー]+/g;
   var PW_JP     = /[ぁ-んァ-ヶ一-龥]/;
 
-  function pwFrag(text) {
+  /* protectOnly=true のときは、節への分割を行わず語の保護だけを行う（見出し用） */
+  function pwFrag(text, protectOnly) {
     var frag = d.createDocumentFragment();
-    var segs = text.match(PW_SPLIT) || [];
+    var segs = protectOnly ? [text] : (text.match(PW_SPLIT) || []);
     var used = segs.join('');
     if (used.length < text.length) segs.push(text.slice(used.length));
     var out = [];
-    segs.forEach(function (seg) {
+    if (protectOnly) { out = segs; }
+    else segs.forEach(function (seg) {
       if (seg.length > 16) { PW_SUB.lastIndex = 0; out = out.concat(seg.replace(PW_SUB, '$1\u0000').split('\u0000')); }
       else out.push(seg);
     });
     out.forEach(function (seg) {
       if (!seg) return;
-      var box = d.createElement('span');
-      box.className = 'pwb';
+      var box = protectOnly ? d.createDocumentFragment() : d.createElement('span');
+      if (!protectOnly) box.className = 'pwb';
       var last = 0, m;
       PW_NOWRAP.lastIndex = 0;
       while ((m = PW_NOWRAP.exec(seg))) {
@@ -1433,10 +1436,10 @@ var FAQS = [
     return ok;
   }
 
-  function phraseWrap(sel) {
+  function phraseWrap(sel, protectOnly) {
     if (!d.createTreeWalker || !window.getComputedStyle) return;
     Array.prototype.forEach.call(d.querySelectorAll(sel), function (root) {
-      if (root.closest('.pw')) return;
+      if (!protectOnly && root.closest('.pw')) return;
       var w = d.createTreeWalker(root, NodeFilter.SHOW_TEXT, null), nodes = [], t;
       while ((t = w.nextNode())) nodes.push(t);
       nodes.forEach(function (node) {
@@ -1444,16 +1447,21 @@ var FAQS = [
         if (!txt || txt.length < 8 || !PW_JP.test(txt)) return;
         var par = node.parentNode;
         if (!par || par.nodeType !== 1) return;
-        if (par.closest('.pw, .pwb, .pwn')) return;
+        if (par.closest('.pwn')) return;
+        if (!protectOnly && par.closest('.pw, .pwb')) return;
         /* flex/grid の直下テキストは、匿名ボックスの都合で触らない */
         var dsp = window.getComputedStyle(par).display;
         if (dsp === 'flex' || dsp === 'grid' || dsp === 'inline-flex') return;
-        if (!pwSafe(par)) return;
-        par.replaceChild(pwFrag(txt), node);
+        if (!protectOnly && !pwSafe(par)) return;
+        par.replaceChild(pwFrag(txt, protectOnly), node);
       });
     });
   }
-  try { phraseWrap('main p, main li, main dd, .ft__note'); } catch (e) {}
+  try {
+    phraseWrap('main p, main li, main dd, .ft__note');
+    /* 見出しと手動改行箇所は、語の分割だけを防ぐ */
+    phraseWrap('main h1, main h2, main h3, main h4, .pw > span', true);
+  } catch (e) {}
 
   /* ---- スクロール表示 ---- */
   var tg = d.querySelectorAll('.reveal');
