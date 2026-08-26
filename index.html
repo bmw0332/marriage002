@@ -437,6 +437,23 @@ h3{font-size:17px;font-weight:700;line-height:1.55;color:var(--t-head)}
 .price__tot .c{flex-basis:100%;margin-top:8px;font-size:12px;line-height:1.65;color:var(--t-body)}
 .price__body{padding:20px 16px}
 @media (min-width:768px){ .price__body{padding:26px 28px} }
+
+/* キャンペーン案内 */
+.camp-wrap{padding:28px 16px;background:#fff}
+@media (min-width:768px){ .camp-wrap{padding:38px 24px} }
+.camp{max-width:820px;margin-inline:auto;padding:24px 20px;text-align:left;
+  background:var(--gold-soft);border:1px solid #D9BC79;border-radius:16px;
+  box-shadow:0 6px 20px rgba(18,42,67,.09)}
+@media (min-width:768px){ .camp{padding:28px 30px} }
+.camp__h{font-size:18px;font-weight:700;line-height:1.6;color:var(--navy-deep);margin-bottom:12px}
+@media (min-width:768px){ .camp__h{font-size:20px} }
+.camp__t{font-size:14px;line-height:1.85;color:var(--t-body)}
+.camp__t + .camp__t{margin-top:9px}
+.camp__t b{font-weight:700;color:var(--navy-deep)}
+.camp__l{display:inline-block;margin-top:18px;
+  font-size:14px;font-weight:700;color:var(--navy-deep);text-decoration:none;
+  border-bottom:2px solid #A87A16;padding-bottom:3px}
+.camp__l:hover{border-bottom-color:var(--navy-deep)}
 .incl{display:grid;gap:7px}
 @media (min-width:640px){ .incl{grid-template-columns:1fr 1fr;gap:7px 20px} }
 .incl li{position:relative;padding-left:23px;font-size:14px;line-height:1.7}
@@ -885,6 +902,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="v"><b class="num">558,800</b><span>円</span><small>（税込）</small></p>
         <p class="c">165,000円 ＋ 24,800円 &times; 6か月 ＋ 245,000円。活動期間によって総額は変わります。<b>お見合いのたびに費用が発生することはありません。</b></p>
       </div>
+
+      <div class="camp-wrap reveal">
+        <aside class="camp" aria-label="キャンペーンのご案内">
+          <p class="camp__h">婚活応援キャンペーン実施中</p>
+          <p class="camp__t">期間限定で<b>初期費用を優待しています</b>。</p>
+          <p class="camp__t">詳細については無料個別診断後、サービスにご関心をお持ちいただいた方へご案内します。</p>
+          <a class="camp__l" href="#consult">無料個別診断で整理できることを見る</a>
+        </aside>
+      </div>
+
       <div class="price__body">
         <div class="prog">
           <p class="prog__k">月会費に含まれる主な支援</p>
@@ -1384,7 +1411,7 @@ var FAQS = [
      直後がひらがなの場合は「から」「により」「をもとに」等の可能性があるため見送る。
      直後が複合助詞をつくる漢字の場合も同様（に沿って・に基づく・に関する等） */
   var PW_SUB    = /([^、。！？]{5,}?[をにへは])(?=[^ぁ-んー、。！？])(?![沿基関対際伴加限即反当応通向比先渡])(?=[^、。！？]{5,})/g;
-  var PW_NOWRAP = /[0-9][0-9,.]*(?:分|名|円|件|項目|回|人|歳|か月|年|月|日|％|%)?|[A-Za-z][A-Za-z0-9.'-]*|[ァ-ヶ][ァ-ヶー]+/g;
+  var PW_NOWRAP = /[0-9][0-9,.]*(?:分|名|円|件|項目|回|人|歳|か月|年|月|日|％|%)?|[A-Za-z][A-Za-z0-9.'-]*|[ァ-ヶ][ァ-ヶー]+|[おご][一-龥]+/g;
   var PW_JP     = /[ぁ-んァ-ヶ一-龥]/;
 
   /* protectOnly=true のときは、節への分割を行わず語の保護だけを行う（見出し用） */
