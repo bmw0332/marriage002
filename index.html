@@ -1117,7 +1117,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 var LP_ANALYTICS = {
   gtmId:     'GTM-5FZHVHXW',  /* Googleタグマネージャー（計測はすべてGTM経由に一本化） */
   ga4Id:     '',              /* GA4（G-N2QDZ2RSWV）はGTM側で設定済みのため空欄のまま */
-  clarityId: ''               /* Microsoft ClarityもGTM側で設定済みのため空欄のまま */
+  clarityId: '',              /* Microsoft ClarityもGTM側で設定済みのため空欄のまま */
+  xPixelId:  'retf6'          /* X（旧Twitter）広告ピクセル。GTMへ移す場合は空欄に */
 };
 
 (function (a) {
@@ -1127,6 +1128,14 @@ var LP_ANALYTICS = {
   if (a.gtmId){ window.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'}); load('https://www.googletagmanager.com/gtm.js?id='+a.gtmId); }
   if (a.ga4Id){ load('https://www.googletagmanager.com/gtag/js?id='+a.ga4Id); window.gtag('js',new Date()); window.gtag('config',a.ga4Id); }
   if (a.clarityId){ window.clarity=window.clarity||function(){(window.clarity.q=window.clarity.q||[]).push(arguments);}; load('https://www.clarity.ms/tag/'+a.clarityId); }
+  if (a.xPixelId){
+    if (!window.twq){
+      var tw = window.twq = function(){ tw.exe ? tw.exe.apply(tw, arguments) : tw.queue.push(arguments); };
+      tw.version = '1.1'; tw.queue = [];
+      load('https://static.ads-twitter.com/uwt.js');
+    }
+    window.twq('config', a.xPixelId);
+  }
 })(LP_ANALYTICS);
 
 /* ============================================================================
