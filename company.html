@@ -30,13 +30,16 @@ body{
   margin:0;padding-top:var(--hd);
   font-family:var(--font-jp);font-size:16px;line-height:1.9;
   color:var(--t-body);background:var(--warm);
-  word-break:auto-phrase;overflow-x:hidden;font-feature-settings:"palt" 1;
+  word-break:normal;line-break:strict;overflow-wrap:break-word;overflow-x:hidden;font-feature-settings:"palt" 1;
 }
 @media (min-width:1024px){ body{font-size:17px} }
 img{max-width:100%;height:auto;display:block}
 a{color:var(--navy)}
 ul,ol{margin:0;padding:0;list-style:none}
-h1,h2,h3,p{margin:0}
+h1,h2,h3{margin:0;word-break:auto-phrase}
+p{margin:0}
+.pwb{display:inline-block}
+.pwn{white-space:nowrap}
 p,li{text-wrap:pretty}
 :focus-visible{outline:3px solid var(--navy);outline-offset:2px;border-radius:4px}
 .wrap{width:min(var(--wrap),100% - 32px);margin-inline:auto}
@@ -363,5 +366,96 @@ main{padding-block:48px 72px}
     <p class="ft__copy">&copy; <span style="font-family:var(--font-en)">2026</span> アコード結婚相談所</p>
   </div>
 </footer>
+<script>
+(function () {
+  'use strict';
+  var d = document;
+  /* ---- 日本語の改行位置を整える ---- */
+  /* 句読点の後ろでだけ折り返し、カタカナ語・英数字・数量表現は途中で割らない */
+  var PW_SPLIT  = /[^、。！？：；]*[、。！？：；]+/g;
+  /* 句読点のない長い節は、助詞（を・に・へ・は）の後ろで二次分割する。
+     直後がひらがなの場合は「から」「により」「をもとに」等の可能性があるため見送る。
+     直後が複合助詞をつくる漢字の場合も同様（に沿って・に基づく・に関する等） */
+  var PW_SUB    = /([^、。！？]{5,}?[をにへは])(?=[^ぁ-んー、。！？])(?![沿基関対際伴加限即反当応通向比先渡])(?=[^、。！？]{5,})/g;
+  var PW_NOWRAP = /[0-9][0-9,.]*(?:分|名|円|件|項目|回|人|歳|か月|年|月|日|％|%)?|[A-Za-z][A-Za-z0-9.'-]*|[ァ-ヶ][ァ-ヶー]*(?:・[ァ-ヶ][ァ-ヶー]*)+|[ァ-ヶ][ァ-ヶー]+|[おご][一-龥]+/g;
+  var PW_JP     = /[ぁ-んァ-ヶ一-龥]/;
+
+  /* protectOnly=true のときは、節への分割を行わず語の保護だけを行う（見出し用） */
+  function pwFrag(text, protectOnly) {
+    var frag = d.createDocumentFragment();
+    var segs = protectOnly ? [text] : (text.match(PW_SPLIT) || []);
+    var used = segs.join('');
+    if (used.length < text.length) segs.push(text.slice(used.length));
+    var out = [];
+    if (protectOnly) { out = segs; }
+    else segs.forEach(function (seg) {
+      if (seg.length > 16) { PW_SUB.lastIndex = 0; out = out.concat(seg.replace(PW_SUB, '$1\u0000').split('\u0000')); }
+      else out.push(seg);
+    });
+    out.forEach(function (seg) {
+      if (!seg) return;
+      var box = protectOnly ? d.createDocumentFragment() : d.createElement('span');
+      if (!protectOnly) box.className = 'pwb';
+      var last = 0, m;
+      PW_NOWRAP.lastIndex = 0;
+      while ((m = PW_NOWRAP.exec(seg))) {
+        if (m.index > last) box.appendChild(d.createTextNode(seg.slice(last, m.index)));
+        var kw = d.createElement('span');
+        kw.className = 'pwn';
+        kw.textContent = m[0];
+        box.appendChild(kw);
+        last = m.index + m[0].length;
+      }
+      if (last < seg.length) box.appendChild(d.createTextNode(seg.slice(last)));
+      frag.appendChild(box);
+    });
+    return frag;
+  }
+
+  /* 注入したspanに別のCSSが当たる場所では処理を見送る（レイアウト崩れの予防） */
+  function pwSafe(par) {
+    if (par.__pwSafe !== undefined) return par.__pwSafe;
+    var probe = d.createElement('span');
+    probe.className = 'pwb';
+    probe.textContent = '\u200b';
+    par.appendChild(probe);
+    var a = window.getComputedStyle(probe), b = window.getComputedStyle(par), ok = true;
+    if (a.display && a.display !== 'inline-block') ok = false;
+    if (a.fontSize && b.fontSize && a.fontSize !== b.fontSize) ok = false;
+    if (a.fontWeight && b.fontWeight && a.fontWeight !== b.fontWeight) ok = false;
+    if (parseFloat(a.marginTop) || parseFloat(a.marginLeft)) ok = false;
+    par.removeChild(probe);
+    par.__pwSafe = ok;
+    return ok;
+  }
+
+  function phraseWrap(sel, protectOnly) {
+    if (!d.createTreeWalker || !window.getComputedStyle) return;
+    Array.prototype.forEach.call(d.querySelectorAll(sel), function (root) {
+      if (!protectOnly && root.closest('.pw')) return;
+      var w = d.createTreeWalker(root, NodeFilter.SHOW_TEXT, null), nodes = [], t;
+      while ((t = w.nextNode())) nodes.push(t);
+      nodes.forEach(function (node) {
+        var txt = node.nodeValue;
+        if (!txt || txt.length < 8 || !PW_JP.test(txt)) return;
+        var par = node.parentNode;
+        if (!par || par.nodeType !== 1) return;
+        if (par.closest('.pwn')) return;
+        if (!protectOnly && par.closest('.pw, .pwb')) return;
+        /* flex/grid の直下テキストは、匿名ボックスの都合で触らない */
+        var dsp = window.getComputedStyle(par).display;
+        if (dsp === 'flex' || dsp === 'grid' || dsp === 'inline-flex') return;
+        if (!protectOnly && !pwSafe(par)) return;
+        par.replaceChild(pwFrag(txt, protectOnly), node);
+      });
+    });
+  }
+  try {
+    phraseWrap('main p, main li, main dd');
+    /* 見出しは語の分割だけを防ぐ */
+    phraseWrap('main h1, main h2, main h3, main h4', true);
+  } catch (e) {}
+})();
+</script>
 </body>
 </html>
