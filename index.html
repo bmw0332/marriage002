@@ -435,6 +435,7 @@ h3{font-size:17px;font-weight:700;line-height:1.55;color:var(--t-head)}
 .price__tot .v b{font-family:var(--font-en);font-size:28px;font-weight:700;line-height:1}
 @media (min-width:768px){ .price__tot .v b{font-size:32px} }
 .price__tot .c{flex-basis:100%;margin-top:8px;font-size:12px;line-height:1.65;color:var(--t-body)}
+.price__tot .c:first-child{margin-top:0}
 .price__body{padding:20px 16px}
 @media (min-width:768px){ .price__body{padding:26px 28px} }
 
@@ -878,12 +879,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="price__rows">
         <div class="price__row">
           <p class="price__k">初期費用（入会金・登録料）</p>
-          <p class="price__v"><b class="num">165,000</b><span>円</span></p>
+          <p class="price__v"><b class="num">128,000</b><span>円</span></p>
           <p class="price__s">ヒアリングを行ったうえでの服装指導・プロによる写真撮影・プロフィール作成込み</p>
         </div>
         <div class="price__row">
           <p class="price__k">月会費</p>
-          <p class="price__v"><b class="num">24,800</b><span>円</span></p>
+          <p class="price__v"><b class="num">19,800</b><span>円</span></p>
           <p class="price__s">月次お見合い改善プログラム込み</p>
         </div>
         <div class="price__row">
@@ -893,14 +894,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="price__row">
           <p class="price__k">成婚料</p>
-          <p class="price__v"><b class="num">245,000</b><span>円</span></p>
+          <p class="price__v"><b class="num">188,000</b><span>円</span></p>
           <p class="price__s">成婚が決まったときのみ</p>
         </div>
       </div>
       <div class="price__tot">
-        <p class="k">活動6か月の場合の参考総額</p>
-        <p class="v"><b class="num">558,800</b><span>円</span><small>（税込）</small></p>
-        <p class="c">165,000円 ＋ 24,800円 &times; 6か月 ＋ 245,000円。活動期間によって総額は変わります。<b>お見合いのたびに費用が発生することはありません。</b></p>
+        <p class="c">表示している金額はすべて税込です。活動期間によって総額は変わります。<b>お見合いのたびに費用が発生することはありません。</b></p>
       </div>
 
       <div class="camp-wrap reveal">
@@ -939,7 +938,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li class="st"><b>プロによる服装選び</b>
             <span>ユナイテッドアローズ出身、300名以上を手がけたスタイリストがヒアリングのうえコーディネート。ご予算をうかがったうえで選ぶため、ユニクロやGUのみで揃えることもできます（衣類の購入費は別途）</span></li>
           <li class="st"><b>プロフィール写真の撮影</b>
-            <span>マクドナルドなど大手企業の広告撮影を手がけたプロカメラマンが撮影（東京駅・大阪駅周辺）</span></li>
+            <span>マクドナルドなど大手企業の広告撮影を手がけたプロカメラマン達が撮影を担当。遠方の方には出張して撮影します</span></li>
           <li class="st"><b>プロフィールの作成</b>
             <span>複数の異性の視点から、強みを盛り込んだ自己紹介文へ</span></li>
         </ul>
@@ -1196,7 +1195,8 @@ var FAQS = [
        'IBJでは契約から1週間から2週間程度で始める方が多いとされていますが、アコード結婚相談所では服装選び、写真撮影、プロフィール作成まで行うため、撮影日程などによって前後します。初回の設計面談で、活動開始日までの予定を整理します。'] },
   { q:'遠方に住んでいても活動できますか？',
     a:['はい。アコード結婚相談所はオンラインで全国に対応しています。',
-       '面談、模擬お見合い、LINEやデートの相談はオンラインで行い、実際のお見合いとデートは対面で実施します。定期的に事務所へ通っていただく必要はありません。'] },
+       '面談、模擬お見合い、LINEやデートの相談はオンラインで行い、実際のお見合いとデートは対面で実施します。定期的に事務所へ通っていただく必要はありません。',
+       'プロフィール写真の撮影は、遠方の方にはカメラマンが出張して対応します。'] },
   { q:'オンラインだけで成婚できますか？',
     a:['はい。これまでの個別指導はすべてオンラインで行い、1年間で23名を指導して60％以上が交際に至っています。',
        'そもそも、お相手と会うお見合いもデートも対面です。オンラインなのは、その前後の準備と振り返りの部分です。',
@@ -1221,7 +1221,7 @@ var FAQS = [
        '独身証明書などの必要書類を提出した、結婚意思のある方が会員として登録されています。そのなかから、整理した相手像に沿ってお見合いを組んでいきます。'] },
   { q:'他の結婚相談所やマッチングアプリと何が違いますか？',
     a:['アプリも相談所も、出会いの入口を提供する仕組みです。当相談所は、そこに「会った後」の改善支援を組み合わせています。',
-       'もう一つは初期費用の考え方です。他社より高めですが、プロによる服装選びとプロフィール写真の撮影を初期費用に含めています。活動開始からの数か月で、会って好感を持ってもらえる状態をつくりきるためです。'] },
+       'もう一つは初期費用の考え方です。プロによる服装選びとプロフィール写真の撮影を初期費用に含めています。活動開始からの数か月で、会って好感を持ってもらえる状態をつくりきるためです。'] },
   { q:'ほかのIBJ加盟相談所との違いは何ですか？', ibj:true,
     a:['IBJ加盟相談所では、お相手を探す会員データベースは共通ですが、料金やサポート内容は相談所ごとに異なります。',
        'アコード結婚相談所では、登録や紹介だけで終わらず、模擬お見合い、33項目の評価、具体的な練習、実際のお見合い、振り返りまでを毎月繰り返します。出会う前の準備から、交際を深める段階まで、一貫して支援します。'] },
