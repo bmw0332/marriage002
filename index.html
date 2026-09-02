@@ -1118,7 +1118,8 @@ var LP_ANALYTICS = {
   gtmId:     'GTM-5FZHVHXW',  /* Googleタグマネージャー（計測はすべてGTM経由に一本化） */
   ga4Id:     '',              /* GA4（G-N2QDZ2RSWV）はGTM側で設定済みのため空欄のまま */
   clarityId: '',              /* Microsoft ClarityもGTM側で設定済みのため空欄のまま */
-  xPixelId:  'retf6'          /* X（旧Twitter）広告ピクセル。GTMへ移す場合は空欄に */
+  xPixelId:  'retf6',         /* X（旧Twitter）広告ピクセル。GTMへ移す場合は空欄に */
+  metaPixelId: '1387328040199947'  /* Metaピクセル。GTMへ移す場合は空欄に */
 };
 
 (function (a) {
@@ -1135,6 +1136,16 @@ var LP_ANALYTICS = {
       load('https://static.ads-twitter.com/uwt.js');
     }
     window.twq('config', a.xPixelId);
+  }
+  if (a.metaPixelId){
+    if (!window.fbq){
+      var fb = window.fbq = function(){ fb.callMethod ? fb.callMethod.apply(fb, arguments) : fb.queue.push(arguments); };
+      if (!window._fbq) window._fbq = fb;
+      fb.push = fb; fb.loaded = true; fb.version = '2.0'; fb.queue = [];
+      load('https://connect.facebook.net/en_US/fbevents.js');
+    }
+    window.fbq('init', a.metaPixelId);
+    window.fbq('track', 'PageView');
   }
 })(LP_ANALYTICS);
 
