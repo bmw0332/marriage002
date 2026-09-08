@@ -632,12 +632,15 @@ h3{font-size:17px;font-weight:700;line-height:1.55;color:var(--t-head)}
 .scope__k{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700;
   letter-spacing:.06em;color:var(--gold-soft);margin-bottom:12px}
 .scope__k::before{content:"";width:20px;height:2px;background:var(--gold)}
-.scope li{position:relative;padding-left:26px;font-size:14.5px;line-height:1.8;color:#D5E2EE}
-.scope li + li{margin-top:10px}
-.scope li.y::before{content:"";position:absolute;left:3px;top:.5em;width:11px;height:6px;
-  border-left:2.4px solid #7FE0A8;border-bottom:2.4px solid #7FE0A8;transform:rotate(-45deg)}
-.scope li.n::before{content:"";position:absolute;left:3px;top:.86em;width:12px;height:2px;
-  background:#A9BED0}
+.scope__d{display:grid;gap:14px}
+@media (min-width:768px){ .scope__d{grid-template-columns:1fr 1fr;gap:22px} }
+.scope__d > div{padding-left:14px;border-left:3px solid var(--gold)}
+.scope__d dt{font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--gold-soft);margin-bottom:5px}
+.scope__d dd{margin:0;font-size:14.5px;line-height:1.8;color:#D5E2EE}
+.scope__n{position:relative;margin-top:16px;padding:14px 0 0 26px;
+  border-top:1px solid rgba(255,255,255,.18);font-size:13.5px;line-height:1.8;color:#BACDDD}
+.scope__n::before{content:"";position:absolute;left:3px;top:calc(14px + .82em);width:12px;height:2px;
+  background:#8FA6BA}
 
 /* 料金：詳細への導線 */
 .incl li > span a{color:var(--navy);font-weight:700;text-decoration:underline;
@@ -921,12 +924,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </ol>
 
     <div class="scope reveal">
-      <p class="scope__k">無料個別診断でできること・できないこと</p>
-      <ul>
-        <li class="y">無料個別診断では、今のお悩みを伺い、次に試す具体策を整理します。診断レポートをお渡しして終わります。</li>
-        <li class="y">ご入会後は、出会いの機会を探しながら、準備・実践・振り返りを継続して支援します。</li>
-        <li class="n">模擬お見合い、33項目での確認、プロフィール作成、服装選び、写真撮影などは、ご入会後の支援に含まれるものです。無料個別診断では行いません。</li>
-      </ul>
+      <p class="scope__k">無料個別診断と、ご入会後の支援のちがい</p>
+      <dl class="scope__d">
+        <div>
+          <dt>無料個別診断</dt>
+          <dd>今のお悩みを伺い、次に試す具体策を整理します。診断レポートをお渡しして終わります。</dd>
+        </div>
+        <div>
+          <dt>ご入会後</dt>
+          <dd>出会いの機会を探しながら、準備・実践・振り返りを継続して支援します。</dd>
+        </div>
+      </dl>
+      <p class="scope__n">模擬お見合い、33項目での確認、プロフィール作成、服装選び、写真撮影などは、ご入会後の支援に含まれるものです。無料個別診断では行いません。</p>
     </div>
 
     <div class="gift" data-gift hidden style="margin-top:26px;padding:20px;border-radius:var(--r);border:1px solid rgba(213,166,47,.5);background:rgba(213,166,47,.1)">
