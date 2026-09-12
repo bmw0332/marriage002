@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="facebook-domain-verification" content="67r35qwjkkzw4zxbj7sjem9iicp3zi" />
 <title>「会えない、続かない」を変えるアコード結婚相談所・IBJ正規加盟店</title>
-<meta name="description" content="実績のある実践型の婚活コーチングを行う結婚相談所です。そもそも会えない、会えても次につながらない悩みに対し、プロフィール、お見合い、会話、LINE、デートを具体的に改善します。面談予約を迷っている方向けのLINE60秒セルフチェックと、担当者と話す無料個別診断を用意しています。">
+<meta name="description" content="実績のある実践型の婚活コーチングを行う結婚相談所です。そもそも会えない、会えても次につながらない悩みに対し、プロフィール、お見合い、会話、LINE、デートを具体的に改善します。面談予約を迷っている方向けのLINE60秒セルフチェックと、担当者と話す無料個別相談を用意しています。">
 <link rel="canonical" href="https://accord-marriage.jp/">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
 <meta property="og:title" content="「会えない、続かない」を変える結婚相談所">
-<meta property="og:description" content="出会いを、関係に変える婚活支援。まずはLINEで60秒セルフチェック。具体的に相談したい方は、担当者と話す無料個別診断へ。">
+<meta property="og:description" content="出会いを、関係に変える婚活支援。まずはLINEで60秒セルフチェック。具体的に相談したい方は、担当者と話す無料個別相談へ。">
 <meta property="og:image" content="https://accord-marriage.jp/ogp.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -291,6 +291,7 @@ h3{font-size:17px;font-weight:700;line-height:1.55;color:var(--t-head)}
   .steps--v .step__n{grid-row:1 / span 2;margin-bottom:0}
   .steps--v .step h3{grid-column:2;align-self:center;min-height:44px;display:flex;align-items:center}
   .steps--v .step p{grid-column:2;margin-top:0}
+  .steps--v .step p + p{margin-top:9px}
   .steps--v .step:not(:last-child)::before{left:21px;right:auto;top:44px;bottom:-2px;width:2px;height:auto}
 }
 .step h3{font-size:16px;align-self:center}
@@ -568,6 +569,7 @@ h3{font-size:17px;font-weight:700;line-height:1.55;color:var(--t-head)}
 
 /* CTA：要点の補足を1行強めに */
 .cta-note--k{font-weight:700;color:var(--navy-deep)}
+.cta-note--set{font-size:14px;line-height:1.85;color:var(--t-body)}
 .on-dark .cta-note--k{color:var(--gold-soft)}
 .cta-note + .cta-note{margin-top:-2px}
 /* LINEは補助的な入口として一段小さく */
@@ -626,20 +628,39 @@ h3{font-size:17px;font-weight:700;line-height:1.55;color:var(--t-head)}
 @media (min-width:768px){ .msg__b{padding-left:18px;border-left:3px solid var(--gold)} }
 .msg__b b{font-weight:700;color:var(--navy-deep)}
 
-/* 無料診断でできること・できないこと */
+/* 無料個別相談と、ご入会後の支援のちがい */
+/* 相談まとめシートの構成 */
+.sheet{margin-top:26px;padding:18px;border-radius:var(--r);
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18)}
+.sheet__k{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700;
+  letter-spacing:.06em;color:var(--gold-soft);margin-bottom:14px}
+.sheet__k::before{content:"";width:20px;height:2px;background:var(--gold)}
+.sheet__l{margin:0;padding:0;list-style:none;display:grid;gap:13px;counter-reset:sh}
+.sheet__l > li{counter-increment:sh;position:relative;padding-left:30px}
+.sheet__l > li::before{content:counter(sh);position:absolute;left:0;top:1px;
+  width:21px;height:21px;border-radius:50%;background:var(--gold);color:var(--navy-deep);
+  font-family:var(--font-en);font-size:12px;font-weight:700;
+  display:flex;align-items:center;justify-content:center}
+.sheet__l > li > b{display:block;font-size:14.5px;color:#fff;margin-bottom:3px}
+.sheet__l > li > span{display:block;font-size:14px;line-height:1.8;color:#D5E2EE}
+.sheet__n{margin-top:15px;padding-top:13px;border-top:1px solid rgba(255,255,255,.18);
+  font-size:14px;line-height:1.8;color:#BACDDD}
+@media (min-width:768px){ .sheet{padding:22px 24px}
+  .sheet__l{grid-template-columns:repeat(3,1fr);gap:20px} }
+
 .scope{margin-top:24px;padding:18px 18px;border-radius:var(--r);
   background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18)}
 @media (min-width:768px){ .scope{padding:22px 24px} }
-.scope__k{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700;
+.scope__k{display:inline-flex;align-items:flex-start;gap:9px;font-size:12.5px;font-weight:700;
   letter-spacing:.06em;color:var(--gold-soft);margin-bottom:12px}
-.scope__k::before{content:"";width:20px;height:2px;background:var(--gold)}
+.scope__k::before{content:"";flex:0 0 auto;width:20px;height:2px;margin-top:10px;background:var(--gold)}
 .scope__d{display:grid;gap:14px}
 @media (min-width:768px){ .scope__d{grid-template-columns:1fr 1fr;gap:22px} }
 .scope__d > div{padding-left:14px;border-left:3px solid var(--gold)}
 .scope__d dt{font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--gold-soft);margin-bottom:5px}
 .scope__d dd{margin:0;font-size:14.5px;line-height:1.8;color:#D5E2EE}
 .scope__n{position:relative;margin-top:16px;padding:14px 0 0 26px;
-  border-top:1px solid rgba(255,255,255,.18);font-size:13.5px;line-height:1.8;color:#BACDDD}
+  border-top:1px solid rgba(255,255,255,.18);font-size:14px;line-height:1.8;color:#D5E2EE}
 .scope__n::before{content:"";position:absolute;left:3px;top:calc(14px + .82em);width:12px;height:2px;
   background:#8FA6BA}
 
@@ -659,7 +680,7 @@ h3{font-size:17px;font-weight:700;line-height:1.55;color:var(--t-head)}
 @media (min-width:768px){ .hero__eb{font-size:13px;margin-bottom:14px} }
 .hero__pain{margin:14px 0 0}
 @media (min-width:768px){ .hero__pain{margin-top:16px} }
-.hero__pain + .hero__sub{margin-top:12px}
+.hero__pain + .hero__sub{margin-top:10px}
 .prose{max-width:660px;margin-inline:auto}
 .sub-h{font-size:19px;font-weight:800;line-height:1.6;letter-spacing:.01em;color:var(--t-head);
   word-break:auto-phrase;margin-bottom:12px}
@@ -715,7 +736,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </ul>
     </nav>
     <div class="hd__cta">
-      <a class="btn" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_header">無料個別診断</a>
+      <a class="btn" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_header">無料個別相談</a>
     </div>
   </div>
 </header>
@@ -733,16 +754,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="hero__eb">婚活中の男性へ｜アコード結婚相談所</p>
       <h1>あなたの気持ちを大切に。<br>出会いも、<br class="sp-br">その先も、一緒に。</h1>
       <p class="hero__pain pw"><span>なかなか会えない。</span><span>会えても、次につながらない。</span></p>
-      <p class="hero__sub pw"><span>今のお悩みを伺い、</span><span>あなたの良さや大切にしたいことを踏まえて、</span><span>これからの進め方を一緒に考えます。</span></p>
-      <p class="hero__sub pw" style="margin-top:10px"><span>お相手探しから、</span><span>プロフィール・会話・デートの準備まで支援。</span><span>まずは無料個別診断で、</span><span>次に試せる具体策をご提案します。</span></p>
+      <p class="hero__sub pw"><span>何を変えればいいのか分からない。</span><span>そのお悩みから、ご相談ください。</span></p>
+      <p class="hero__sub pw" style="margin-top:9px"><span>アコードは、</span><span>お相手探しに加え、</span><span>プロフィール・会話・</span><span>LINE・デートまで</span><span>具体的に支援する結婚相談所です。</span></p>
+      <p class="hero__sub pw" style="margin-top:9px"><span>無料個別相談では、</span><span>会うまで・会った後の</span><span>どこで困っているかを伺い、</span><span>次に試せる具体的な方法を</span><span>一緒に考えます。</span></p>
 
       <div class="cta-g">
         <span class="cta-for">今すぐ具体的に相談したい方</span>
         <a class="btn" id="cta-timerex-hero" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_hero">
-          <span class="pw"><span>無料個別診断の</span><span>空き日程を見る</span></span><i class="arw" aria-hidden="true"></i>
+          <span class="pw"><span>無料個別相談の</span><span>空き日程を見る</span></span><i class="arw" aria-hidden="true"></i>
         </a>
-        <p class="cta-note cta-note--k pw"><span>オンライン30分・無料・診断レポート付き</span></p>
-        <p class="cta-note pw"><span>相談内容がまとまっていなくても大丈夫です。</span><span>入会は相談後にご検討いただけます。</span></p>
+        <p class="cta-note cta-note--k pw"><span>オンライン30分・無料｜</span><span>相談まとめシート付き</span></p>
+        <p class="cta-note cta-note--set pw"><span>無料相談では、</span><span>模擬お見合いや</span><span>33項目の評価は行いません。</span><br><span>入会するかどうかは、</span><span>相談後にご検討いただけます。</span></p>
       </div>
 
       <div class="cta-g cta-g--sub">
@@ -870,7 +892,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>あなたの婚活の状況に合わせて、<br>次に試せることを一緒に整理します。</p>
       <div class="cta-g cta-c">
         <a class="btn" id="cta-timerex-results" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_results">
-          <span class="pw"><span>無料個別診断を</span><span>予約する</span></span><i class="arw" aria-hidden="true"></i>
+          <span class="pw"><span>無料個別相談を</span><span>予約する</span></span><i class="arw" aria-hidden="true"></i>
         </a>
       </div>
     </div>
@@ -887,7 +909,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <div class="shead reveal">
       <p class="eyebrow">相談を担当する人</p>
-      <h2>無料個別診断は、<br class="sp-br">この担当者がお伺いします。</h2>
+      <h2>無料個別相談は、<br class="sp-br">この担当者がお伺いします。</h2>
     </div>
     <div class="staff reveal" id="staffList"></div>
 
@@ -899,16 +921,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 
-<!-- ============ ⑥ 無料個別診断 ============ -->
+<!-- ============ ⑥ 無料個別相談 ============ -->
 
 
 <section class="sec bg-navy on-dark" id="consult">
   <div class="wrap">
     <div class="shead reveal">
-      <p class="eyebrow">無料個別診断</p>
+      <p class="eyebrow">無料個別相談</p>
       <h2>まずは、今の婚活を<br>一緒に整理しませんか。</h2>
       <p class="lead">担当者がオンライン面談でお話を伺います。次の5つを行って終わります。</p>
-      <p class="lead" style="margin-top:12px">伺った内容は<b style="color:var(--gold-soft)">診断レポート</b>にまとめてお渡しします。良かった点・見直せる点・次に試すことの3つで構成します。</p>
+      <p class="lead" style="margin-top:12px">お渡しする資料は<b style="color:var(--gold-soft)">相談まとめシート</b>です。会うまで・会った後のどこで困っているか、相談で整理したこと、次に試す具体的な行動を、1枚にまとめてお渡しします。</p>
     </div>
 
     <ol class="steps steps--v reveal">
@@ -924,34 +946,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>その場でお決めいただく必要はありません。無理な勧誘は行いません。</p></li>
     </ol>
 
+    <div class="sheet reveal">
+      <p class="sheet__k">相談まとめシートの構成</p>
+      <ol class="sheet__l">
+        <li><b>いま困っている場面</b><span>お相手探し、プロフィール、お見合い、会話、LINE、デート。会うまで・会った後のどこで止まっているかを書き出します。</span></li>
+        <li><b>相談で整理できたこと</b><span>伺った内容をもとに、いまの進め方で続けられる点と、見直す余地がある点を整理します。</span></li>
+        <li><b>次に試すこと</b><span>次のお見合いやデートで試せる行動を、その場で使える形で書きます。</span></li>
+      </ol>
+      <p class="sheet__n">総合点や順位をつける採点表ではありません。相談の記録ではなく、相談のあとに行動へ移していただくための1枚です。</p>
+    </div>
+
     <div class="scope reveal">
-      <p class="scope__k">無料個別診断と、ご入会後の支援のちがい</p>
+      <p class="scope__k">無料個別相談と、<br class="sp-br">ご入会後の支援のちがい</p>
       <dl class="scope__d">
         <div>
-          <dt>無料個別診断</dt>
-          <dd>今のお悩みを伺い、次に試す具体策を整理します。診断レポートをお渡しして終わります。</dd>
+          <dt>無料個別相談</dt>
+          <dd>会うまで・会った後のどこで困っているかを伺い、次に試せる具体的な方法を一緒に考えます。相談まとめシートをお渡しして終わります。</dd>
         </div>
         <div>
           <dt>ご入会後</dt>
           <dd>出会いの機会を探しながら、準備・実践・振り返りを継続して支援します。</dd>
         </div>
       </dl>
-      <p class="scope__n">模擬お見合い、33項目での確認、プロフィール作成、服装選び、写真撮影などは、ご入会後の支援に含まれるものです。無料個別診断では行いません。</p>
+      <p class="scope__n">無料相談では、模擬お見合いや33項目の評価は行いません。プロフィール作成、服装選び、写真撮影とあわせて、ご入会後の支援に含まれるものです。入会するかどうかは、相談後にご検討いただけます。</p>
     </div>
 
     <div class="gift" data-gift hidden style="margin-top:26px;padding:20px;border-radius:var(--r);border:1px solid rgba(213,166,47,.5);background:rgba(213,166,47,.1)">
       <p style="display:inline-block;padding:4px 11px;border-radius:999px;background:var(--gold);color:var(--navy-deep);font-size:12px;font-weight:700;margin-bottom:10px">参加特典</p>
-      <h3 style="font-size:17px;margin-bottom:8px">婚活ボトルネック診断レポート</h3>
-      <p style="font-size:14px;line-height:1.75;color:#D5E2EE">現状の課題・優先順位・次の一手を1枚に整理してお渡しします。</p>
+      <h3 style="font-size:17px;margin-bottom:8px">相談まとめシート</h3>
+      <p style="font-size:14px;line-height:1.75;color:#D5E2EE">いま困っている場面・相談で整理できたこと・次に試すことを1枚に整理してお渡しします。</p>
     </div>
 
     <div class="cta-blk reveal">
       <div class="cta-g">
         <span class="cta-for">担当者と具体的に整理したい方</span>
         <a class="btn" id="cta-timerex-consultation" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_consult">
-          <span class="pw"><span>無料個別診断を</span><span>予約する</span></span><i class="arw" aria-hidden="true"></i>
+          <span class="pw"><span>無料個別相談を</span><span>予約する</span></span><i class="arw" aria-hidden="true"></i>
         </a>
-        <p class="cta-note cta-note--k pw"><span>オンライン30分・無料・診断レポート付き</span></p>
+        <p class="cta-note cta-note--k pw"><span>オンライン30分・無料｜</span><span>相談まとめシート付き</span></p>
         <p class="cta-note pw"><span>相談内容がまとまっていなくても大丈夫です。</span><span>入会は相談後にご検討いただけます。</span></p>
       </div>
       <div class="cta-g cta-g--sub">
@@ -1025,14 +1057,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="lead" style="margin-top:12px">そのために、会話の様子を33項目に沿って確認し、あなたの良さが伝わっている点と、次に試せる工夫を整理します。</p>
     </div>
 
-    <p class="lead reveal prose" style="margin:18px auto">ご入会後は、毎月この5つをくり返します。回数の上限はありません。</p>
+    <h3 class="sub-h prose reveal" style="margin:34px auto 8px">ご入会後の、毎月の練習と振り返り</h3>
+    <p class="lead reveal prose" style="margin:0 auto 18px">ご入会後は、毎月この5つをくり返します。回数の上限はありません。</p>
     <ol class="steps steps--v reveal">
       <li class="step"><span class="step__n" aria-hidden="true">1</span><h3>設計</h3>
         <p>どんな相手と結婚したいのか、自分の強みは何かを整理し、その伝え方を一緒に決めます。</p></li>
       <li class="step"><span class="step__n" aria-hidden="true">2</span><h3>練習（模擬お見合い）</h3>
         <p>異性スタッフを相手に、本番と同じ流れで話します。いきなり本番に臨む必要はありません。</p></li>
-      <li class="step"><span class="step__n" aria-hidden="true">3</span><h3>33項目・5段階で確認</h3>
-        <p>表情、話す速さ、質問の仕方、清潔感。ふだん誰も触れてくれないところを、5段階の目安に沿って一緒に確認します。伝わっている点も、そのまま言葉にしてお伝えします。</p></li>
+      <li class="step"><span class="step__n" aria-hidden="true">3</span><h3>会話を振り返り、次に試すことを決める</h3>
+        <p>ご入会後は、模擬お見合いの会話を33項目・5段階で振り返ります。</p>
+        <p>結果をもとに、伝わっていた点と工夫できる点を整理し、次のお見合いやデートで試す行動を選びます。</p>
+        <p>数字を確認して終わりではなく、練習したことを本番で試し、その後も一緒に振り返っていきます。</p></li>
       <li class="step"><span class="step__n" aria-hidden="true">4</span><h3>実践</h3>
         <p>次の1か月で試すことを1つか2つに絞り、本番のお見合い・デートで使います。準備した状態で臨めます。</p></li>
       <li class="step"><span class="step__n" aria-hidden="true">5</span><h3>振り返り</h3>
@@ -1066,7 +1101,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="cta-blk reveal">
       <div class="cta-g cta-c">
         <a class="btn" id="cta-timerex-cycle" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_after_method">
-          <span class="pw"><span>無料個別診断を</span><span>予約する</span></span><i class="arw" aria-hidden="true"></i>
+          <span class="pw"><span>無料個別相談を</span><span>予約する</span></span><i class="arw" aria-hidden="true"></i>
         </a>
         <p class="cta-note pw" style="text-align:center"><span>担当者と話しながら、</span><span>いま困っていることを一緒に整理します。</span></p>
       </div>
@@ -1136,8 +1171,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <aside class="camp" aria-label="キャンペーンのご案内">
           <p class="camp__h">婚活応援キャンペーン実施中</p>
           <p class="camp__t">期間限定で<b>初期費用を優待しています</b>。</p>
-          <p class="camp__t">詳細については無料個別診断後、サービスにご関心をお持ちいただいた方へご案内します。</p>
-          <a class="camp__l" href="#consult">無料個別診断で整理できることを見る</a>
+          <p class="camp__t">詳細については無料個別相談後、サービスにご関心をお持ちいただいた方へご案内します。</p>
+          <a class="camp__l" href="#consult">無料個別相談で整理できることを見る</a>
         </aside>
       </div>
 
@@ -1163,7 +1198,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="cta-blk reveal">
       <div class="cta-g cta-c">
         <a class="btn" id="cta-timerex-price" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_pricing">
-          <span class="pw"><span>料金と支援内容を</span><span>無料個別診断で確認する</span></span><i class="arw" aria-hidden="true"></i>
+          <span class="pw"><span>料金と支援内容を</span><span>無料個別相談で確認する</span></span><i class="arw" aria-hidden="true"></i>
         </a>
         <p class="cta-note pw" style="text-align:center"><span>金額や内容を確認したうえで、</span><span>ご相談後にご判断いただけます。</span><span>無理な勧誘は行いません。</span></p>
       </div>
@@ -1203,14 +1238,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="shift__b">理由を振り返り、練習し、<br><b>大切な人との関係を築く力を育てる婚活へ。</b></p>
     </div>
 
-    <p class="lead reveal" style="text-align:center;max-width:none">まずは無料個別診断で、現在の課題と次の一手を整理しましょう。</p>
+    <p class="lead reveal" style="text-align:center;max-width:none">まずは無料個別相談で、現在の課題と次の一手を整理しましょう。</p>
     <div class="reveal">
       <div class="cta-g">
         <span class="cta-for">今すぐ具体的に相談したい方</span>
         <a class="btn" id="cta-timerex-final" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_final">
-          <span class="pw"><span>無料個別診断を</span><span>予約する</span></span><i class="arw" aria-hidden="true"></i>
+          <span class="pw"><span>無料個別相談を</span><span>予約する</span></span><i class="arw" aria-hidden="true"></i>
         </a>
-        <p class="cta-note cta-note--k pw"><span>オンライン30分・無料・診断レポート付き</span></p>
+        <p class="cta-note cta-note--k pw"><span>オンライン30分・無料｜</span><span>相談まとめシート付き</span></p>
         <p class="cta-note pw"><span>相談内容がまとまっていなくても大丈夫です。</span><span>入会は相談後にご検討いただけます。</span></p>
       </div>
       <div class="cta-g cta-g--sub">
@@ -1235,7 +1270,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="company.html#privacy">プライバシーポリシー</a>
       <a href="company.html#tokushoho">特定商取引法に基づく表記</a>
       <a href="terms.html">利用規約</a>
-      <a href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_footer">無料個別診断</a>
+      <a href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_footer">無料個別相談</a>
     </div>
     <p class="ft__base">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10.2c0 5.4-8 11.4-8 11.4s-8-6-8-11.4a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="2.8"/></svg>
@@ -1247,7 +1282,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <div class="sticky">
-  <a class="btn" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_mobile_sticky">無料個別診断を予約</a>
+  <a class="btn" href="https://timerex.net/s/ba.08h_1a1f/83cf8db1" data-cta="cta_mobile_sticky">無料個別相談を予約</a>
 </div>
 
 <script>
@@ -1296,12 +1331,12 @@ var LP_CONFIG = {
   bookingUrl: 'https://timerex.net/s/ba.08h_1a1f/83cf8db1',
   lineUrl: 'https://lin.ee/SDYjZsC',
   ibjMember: true,        /* IBJ加盟表示（ON） */
-  showBonusReport: false  /* 診断レポートを渡せる場合のみ true */
+  showBonusReport: false  /* 相談まとめシートを渡せる場合のみ true */
 };
 
 
 /* ============================================================================
-   STAFF ─ 無料個別診断を担当する方の紹介（◆4）
+   STAFF ─ 無料個別相談を担当する方の紹介（◆4）
    name / photo が空のままだと、ページ上に「未設定」の枠が表示されます。
    公開前に必ず埋めてください。
    ・photo は data:image/webp;base64,... 形式の文字列、または 'staff.jpg' のようなファイル名
@@ -1309,7 +1344,7 @@ var LP_CONFIG = {
    ============================================================================ */
 var STAFF = [
   {
-    role:  '無料個別診断 担当',
+    role:  '無料個別相談 担当',
     name:  '清水',
     en:    '',                 /* ← ローマ字表記（任意・空欄可） */
     photo: 'data:image/webp;base64,UklGRuwxAABXRUJQVlA4IOAxAADQvACdASpoAWgBPj0ejESiIaESWUUkIAPEsrd7PBwHf7N4AHiATP10+VvL/7Ad+ly70H5m/2337+Q++X2/lG7Yu2PMN5+/5n9o9tX/O9XH9V/cP3Av2E9c3o8/dP1JftT+3Xu6f8X9zvdZ/b/9j7AH9g/1vWmf47/p+w/+3vp2ezl/av+96XOqB+r/9L3D/5H+8/tp6A/jX1T+C/J/+/f+n4Nv7vyaeof13/A/xf7le4/8i+6n4P+9ftT/av3f+fv+H5A/Lj+z/MH++fIX+Rf0H/Df3P9p/zN5k4Av6P/ZP8J/iP3K/yHp1/6Po1+hf4P/d/ar9gP8s/oX+C/Lr+1//v69/zP/C8mT71/0f+B7gX8r/r/+q/wv70f3r6b/6X/n/5r/Tft77ifzf+/f8r/J/k99hn8v/qn+h/tf7u/5z////n76Pan+6/s4/sP/9SfRM+HigFZylAKzlKAVnKT5lT3kVYHW9k29AvwQdz8ONynFsFZylAKzlKAF9goPH7tp70B4XYES8eJ6Mbvm2D7ZL0Sebej6oNvW7A+4s+mnJSviXtP7iRSf3BO6o1niLswOziHiE7qU+b2ohrDFMe1ohDhonXLoMBe6kp6XJC8lxic1e/yoPlZLrcT1uL1/qrsvEik/uBNPKGKmlKrHoUyPXJsxYm8YJxt87eoU5Npa0VmVusUcK8HmJU3h1UneKoKabKVfAKLWTkVWl7lhEbxLlKAVkJ2fT20nF7MButfpddj3VtYbEPoR/HqtIozn8gxxhkcUDCGWzXtvy8Wirldc+A9UOH86L6jLOqN7bpclAKzlKAGkQ1SgPSkAJkwj3H0p8/YiprTBmV0GiVpNsPVEPdsg2/Yx2UEOz3EfshOtCZMbUGzDERfdxqBKIh4oBWcpHGLKsPZABS3nR2NsnJ4Thrhuin01yi9F+Cfe0DXEQacvfuVRdJ10MoYjzKZdr/XNG+hbCs/rvhUWXe4losmDfMaD4LLh2OA+xDnvirH5f5dd7LeD2XK0dmB8kcAVgw55uf2fdvqC4UXbstoZsbzpfykdAaFF8nz4eKAVnJx56tfXIHAIGUjpWBFdJP73QENw7JXf90JGu/Z1p/UJmgUGJztHju5bbLxIpP7iKTW7+yYKNae7NgT5Yqa97mxUbUntMivvazQ7HeJFJ/cSKIU5CUfowX2YAyIjPl85IUrXbbuwpIMgZ9tA2X29vy9AHw1zAKzlKAVnK06NIUVi7OAtdG5+/tX/bS//yzXzu+D0UPotGhXgtJlUoBWcpQCs5OYSGE9UhbrKev/DrI3e3a3WPWzv66fv/zZD/ejLB5kz2AmfDxQCs4G2Mncp/T56HcmnPpa7rUDkL8l040M+/BerwFcWZ+yGkSBwywgil9ywu8O2ZfHO7oZ+xqp7u8SKT+4FsmXn+y2kAkw9ibiDeTcsRRD2mgUquZ1VRXV7Z4q2A+PJONgcWpwelsVG9DvcFq+9Vy2g+8hJRMa4FJSg7WVPPw8UAUYDW0kFiDHqtl0pm2IRqoc1VOI/Y5z5hvYpTIaVbVVRq2iTc+fBVeKRCgAAmxVhmty5SoAeBiXaEEX5Fw7mAVkkSSZuy35JQvO8fEOQHbfU59Lz35sSey08NDQOJjP6pE+mXUT9Zto0kLHvfG+/OJMVVEbpFogVZQ4GXqnw8SJlUvmhgu7uhDXaUZJfjOqylve9FXnzt0CdmycKpe1skaCGdfGk7Hbaa8vq0y5A9qKh4ny9lXaH2WJFhdpAobAbus+R3cI+DhQUd5RaPt+pXsMHgDmsgJ0YoRjcnQcoVS7M92tqcpP7Ji0xvdAhlz1p/r1bDJcbFM3ZOTDGsUTLdghcN6UEgYcMlj9fcDAGAywAoD/IG+LuPDP7iL8gjWCmbrwW5d+s5rMH36o+fnUIS+4XmBrZxHfN6KfNg68yLURHVNV2t/znV7aDLk4M7kQ3GAyPhUSqyKexpcP9L3qx0pST7pkQmEI6kVB+ew2oabg00BBHE1Z/w899KNfPch7gcErhuuqkDHHJ738AAP7/Yf/8rruFwgzQf33H+ST/kk/ZSAAAABzcGh5kMEkKkOf6CwOrtbNANA17LJ4lLrIUELdnucXOLkIWIdruQlnRUTfUrRvziCEFQMIfpsIDXIA1NDU4PAOllMkiMtutJixmDv/+FUKdeUn+MIML+qDny+5y3n5vMqzxiQW8GFeqUMBAZUB/QfDFhBENlNku+A48AviM/HUiKb4k3TutnW4U9yTLaxSrvY1aWhlT8LGnZdlmxdLYO/HbIurx8g2lc5650SnFpok2QxUnrpmlPjvIhfSp8CCFjQldudkkCYe/HaLUY+V1rfJ2m1eV1v6S0D8fHl26iRyUUFAhCHgKan+Z0e+rsNpoiy7r2ymTflI1uuZvowH5rT0WseBpPQn0hIANe9HqTFXQxNZqhSN8ZmoNbsFvcTqWs3pBOj4zKALpOaaPQk4pjHYERotZULdRSSUTBYR1lrfPiCrvbtPIgVgEABjezNhOJLyO6ZhujHPQ368FOCHfy+Aajw21wPpUGXWTvVvAq2uVd9gX2QyVX+j/jtIw6hd4g+gUjPnyv3356b2SHN1lxiXeCY4kIdHRmUv503vRXobdg19E3FLbqEV/6rUAMe5LZ0ZVFDogMgU2z7kHTzYNMISEi3wpDNnKdxIb9FJQD8c/WmEfmfILtDi1PDLInF2MxDKW1Sxx4qAwSra/ANFeOjAAoJQ05ac+jSwLO4Or9oE6Eln/R3jbee7h1kuTIhD7wyF+HoRNa1lJ0fS+YVaW/oqSO3Dk67wT/hlRs3VAO4VRbIea8dkumekZ/yQ6sdymAx8H/rPakEgvWgvCJUUdhRj5nEJsZBHPpYT1mM4fmt/5wGfrGevesOwvMcx3WOvsr6MlWTNvPheBq8tF/eELup0ez/jNEvbo4HpxKqY2ACL6WLcu3dcGtK0K9HRZQc5fKd0MEs6hdmkqe8slBjI2MghG1iXvugnsVrMBqtVG5WD9YVAWCgcbnQ1ALmWVeAsNfgorxSWw9RK3de6qdHm8Tj+5AGztRKk+/mZbYloTCcMUj5IUfK0vX9NK4kX/ghLu5JHNQAxk2eE5dIntLJNJ/sPwttP184fU0aKtEVGri3sVvabS2UwntQNLwKNm6uZ1Q5R98a88qMIsdrKPclYn2Dm5xUxP1XXV3GUqOznXNCkgUzQrLHesp5DiszX3/3WADIiN2pPdvZ04eeW+l3t3NurP6T9i4s96Pob7S1uQwB57G7xyXL2yh9DfMlTKdCmTls2ST7u0I1qyf/NGdAP1Jti1MqesoRH7cpkAaeW8Lp+SkDZdFv2omV2j6IWbxIcZ9lOUO0PpW6NaGPwzI2SYJYtRiK6EQjUDPw03Nnq+ah3+9TRrHMaI+enhIZtVlcsQupR7w2EjZsZBM8BCjyUPhCCt7cNdBLq+r5yuxE/Jm08fJCXlEMzjQVa+zvQgr7FpQlYBqfKt5Wg5ukmJfSM88KbM30sAa76Nzdnme0MaAEW8Samk0VY5tEqfAGMbHpWhTpEOvKMJeMAW433XPF7Kzfoht1rTm39MudzyawSzcKn3b5oVKn+JAnrWCp2CoFdLh2OT2dO93fmXeizRECML+YhNeCFHaHdgzmumcReP+NUy+fRTJgoRg9f8EESFa4CqvTNxKDy94iMBQqksGr4HeDwPybKsqvjiS8Igm0awAzD7USzwZPWJx9xYo43OLusyT/EqX+74/Xp5PpzWedNSY9KliWbx0ITJ69977J8p7KqQ5tSQzFVzJOY8jR1Z8vtOXA3UthhkFgVOIpOYBmfGW4Ap6tYDW/ZyuGI3AF3o78iJJBrgMj15TrwwoC2nVMmwawe7gLe2M511BFo8irFVX9D+6Wb9GRsUYCaC5bnjTdsVnX9gsi/ZeU5OSnfkT1tkj/ngbkfzU1sYnMLYTJlpfQGQJs8kMyLKzoZw1qZZnYLLEztudwOP01qJc/03fELihzrB0LnTojPnVKtkdiEogB5yHv89VGYPRireiKCBRHuy7POrWYsZT24r3LheASbYEQgFT38hQ7FCc+UCbNwTXl1gXHcv/H+or1sPkztfXTxghIROfqDMzm6lkMaVSmQ/zbm87suUGGkzHqDhcqEahY6PW3y6RftiERBxmT0+H7lzGK3UN0TE2/8e/2xA4imO7FbNow4ncBrf4zJcy75/T0ZisV9A+wBlZudaVsixux4Px3Gm4X+Nc5WFxnb4No0RS3+jYLAqm8ae4x5NiojxmRkfb5bDN3NCjzIuOC9//aMGz4HojAjMZCv4M8T2rsN9+UEc97lT7EyG8k6SphBlt2uCvFGBlzQFRI8SN9P4nPeQq9BaPqhQG6728WT+FmQeVn41e6DIMEwjFkIso1XdRXKp6iev+mg5N37iwXnC1hGwVVadHM+H4oXej1lS6Am4v231edab1eSnIQb75iscK2i0eX98DgdPOAu6jhDQhFNsVcMZ5dICLjkUPeg9DAV7w4AC+LU7cJSw9vzKY52s2+K6J1jLQKspLYKBjPIrbp8KaOXmb/hm9eAZTmfMHoqAJ0YsN501aELmPNnErGnpQv5iLhyB5F2weoZwbMHRf4esh5eRjbvQGKFTeaSZBFnwTYV+jFnAUPBlf1zin6PLdXhQHy3FOZgtilV3rbcv4VIwYDVVwJSxewyYPsqILaccjGPL9bn3s/FhJl1Vzd7ZN1F4KUXKInLCgqRGI8CiyHohRjMXV1bH/5XzBaSrqtqd51VMBEr3Jy6Fecv+FI395nBAHF5CxFb6P/B8/rxMUBjuXIchCPzNcHPzSlckdKIw7ZDfy5Ge+yoQwxWpvDJXXJ7zztkKb19u0qz+9a1LQzlNYblfOmFILKKrpIwzHI0a0C3lowPuoXUuYD5cVxzmQNXa6OPnHdxz63imqXXLHSLk8zUiRzWmbF0pDixzSXNB67QTZtxjCFm9dVo8nER/iPKtBBF1WDgKuESA6jKM51M9dpEFGyy9QWepCUU239Ar8vfL2+8CKjMXEpayMwSPQABWn96SCNLDm/IFYMRb5QJwB5ZUIT0EbBPxEwNPIqbq8TQt/xJGzWcUIgT8WdqjGYdxkUESzTZM0K3YjCA/kzPpNueYLy0l2Rd5gt2rqATExf79dp57mwGlrGASlPXWEQpGY/2Y1nciLWFY2srN78slLBNkjsPqswlZ2Woxw/ywreOTJubt+8Jh/WCvhvWSvdAsU/pop7WuEkVJYnSCmSk/1voEgmcOp1knEIwzM2iNh32jIKI7Uz287zLaD2tP85uRt8WID0+Dd/PSRR2hFYx+1FA71Agy2LeHpDtgImr/EN7L5JmkC2hzmt5Vk/q+32c5uMdD1mP/X1tC7NgwAeumZ8nxIMu3PtZHIaD2DAzK19ZGJrHKOZUrJhZSvUziBMUNSWGcO9LqGylyfe6RXPYmx1Aozn3K3fBoSJtpFRAzVyuDyUCx9uSlabgYAkdU3a7jge1BrBL7gP+qOpgTW8YF1bbXL2ewq66xyNyK8LlBuI7r1zQWrqjt/K1PIgpOL2DfmiogFZ4HBnafrpjHXHwmFrfCHLaS+T2sE8WZfbGVTHc5elSPBsZfvFHdgs3Un8Fl9tJEOnhdx5Mhua6lS3EWL/8+CCVkPm1v12rc9uwMtwPgWn0yw0sW7fYAKl/4VEya2i/0YCmff5rqnig/J9rW0zCFWNh9T5xmAVHZTBH8rYtmYRi0SOrUTL7EcOWt+55p/XvIVwRrPefABxnE8FEertnQ8MRHSMclNZL39P3p+pNfEAAt5G7GW4xAsGinWP8uQ88YQsr5e0EsbrgOtCaN4DoSw3VB9fpHxHntK38ojDsifVhQLQbRLduCS46Gxn9B3HtE8HBbYe4qafo1lmY968EljEu1Qz1Hae168DjvMUK3JXsZUMLd4sJKGlprik/N2eZ9RqfOK8PsHT+Fs5ew2sf4IBxSH2wJxRspQ4FMDx6ZpoOC291NMzEHniH3Ryk1uJKCOwBdkZVL8wMNrK7yHiIPtl0sxR0oX38CDcbr0kT06FLF+7Qk1Jtz+sjDFNzmAI/+Xv1m8EChqqCqL6jFcJj4V9q+QLQFCsqy9t8qwk8XfE+0WcN+Uj8ukT/87Bt1/mDs4YxeC2xWdwv/1vADQyA3zzECgOTj4XLxuKJMS1+aaFAfOr38z2Mf9IPK8PtwAU5KUPZ2UP4tLstZjU6y8zNmytS/kg9Bbp0JvTbESpr7Kao2daEaynmEuzwj1gFSAqfrHdK4pE3NX0MuUK/jbjNm+m+ovRxVPSHzek9tVC96ax9gKcQabFJ+gKVnIINcoGjQsAi+PtmyDUghL42s3840W+ZA7K6alze5GXM+yBfCXwnykpBAstgqTK6SO6gwBver5P3MuuaQ1ELKmbAuQlAyliBW6ghTPQUiFElBuq4Dlf3mcud3Veph6lWn16kAEtOd6nU//LbS56W6RspWKHDIikJxP9cNLWGtPgU34um4tk6TlKsXfOyPFk15vxABleIyLfzrgSiLytSn1L2UsctCXoErTQoCtsbEkeUQXkpFoa1KaxLybYIVHphYt6I8ofH8TQXjXDiDHryrAHazLs8/TJ+CBEdIa7OI8iiHhNDVQ27TZU1dKHvfgrrtnFWuIfySHNVD/F1Ewy2XSbj47JFe593kiuRtJPhqUxGw7bG9gaaXxP3yJPTKqoZmDTenC1kVtFhomj6aW/f/OOvNfliAsIiwpF1NcxekOHbPWCAvw6iAhYEclg7icoBlzBqV8sh6A/qFh8uPN+77hPsohxghsnfhJVHEBDM+nGhIMkexPjR7PaxInCg3oyMOlC1ekn7IgfXHQZsyQZefxwecB54/KTNUol31aBiHVSa7Y1HjI+EQRHYn5sTsSdA3+0psn8dZZJ70McN+ejk12DCWauyZhVScuWpHlbRY82lAak8fuEzHDxgBiG1sN/JJFtV/7ANYiT4dNB+g45EOZniP+dbA41NghSrX7XiRi+s8fP/aoJ2a9B2HOw/lX8IpyhBrcAxjionRgKdJ174gQdi3eLRVN4q6fTSQXUm7/kkOLpgjcju68OWLlw5QmDTrtK3RA17nJoKYZjB2Y/Z9N3dP7qzRUkgvay2lmjp0PEqtNINrx2qq0eXATrVpmc210LLVK1bu/w0GRL7Ie+o820gPrlfgkMVrxxxKycQNq/1k+iRFfQzg9RRabnWQvv3P58XEIqWnuTj6vfXqvUUH4y0wrlUpr+sWrvETb3xFo+RmxaaKjPF4tRB1ASMbQxJMKFpWd//M7A+KPpGApm0A5ZoPcckPBAF58KLstrX103CbT0Wi4SB/XtVS8M18d7m2bkFBhnSIil7rlf1fx/togsjjbaDHrNA0aZcNvCDCMo+RkmTqaiWUQvqX964pFyyiJko7Nt/1iDM5maI+WhxVMo8uhE8gHj5B8h20uKz9h4BjxbytMQbTTG+zX13X8MX7pZx09EcBP4twZs7vAtnPYIl9reT+j2tPKIF+70YFXpSs4BfWvWVVasQ390AFLQIdmpvASpe7zfjjDjbo8LflAFTKukbXwtLH5VNU7o7f+tuUKfy3SX99YZXO2+35r9pbdmz6rryMx2r/BPPuaRVE51xiJp16LusZ9U86wzzlrDHW0MAFdhdRpYazP3mp73mY0JA9uXvg/vpL+L2kLJMTDaUpb7rY39yYBu9h3s2mgY2nuWezNuvIsETANvHFh5wnSVffS3UNyiqudy6WsaPf73IKF8d2S825yxozUvJiMyUcuwVM0mIscYsWnGKieqk30VASn0hI2rufflw17eJ5M52EAHetSCMK3vW/B57Hl6blr43g24zLI1H3wirl4SjfoGcWSD7htJc0kGq5PtqoFD6rCprtgJsmnPe35E23SYZOMK6SHYMZ9kgDkozQ6SEWq2K8xc3v4Pd8faJCCx5dWj/a1yNMWSDSHS9i36VCvEz+9CBF891UkIxMXoDV3kedK2FUfEiWn0Au07GOhGmnWNoXcLabXjA1c7UMcn6f24uZ/95qLMvXmj4cY7z8bV7827uxGTW7OS4KnXT6r4mhZjUPmpBVczbLv7K3gR/H95PvsPkdk4s7fjsNXnrS8MIAPJK4T3+BcAELTHKmP9yRes1jY0/aUrHqJcb5GuzPeijLvi5TVCadFGs9hxkyTZRqSGW1kZBcYBzzNDO1Kz7FJHYRJpiZeGrPDZvUA+bKqW16wSJ1mCk5S2N7VEFFlbSkf2u9C/JfYnybHJJSwh54sJ9nsgOJ08Gkkf9Or/l3Rf7V0TY8tcGQntS0faQc19G/jKeVhZqOIu3p1iu9fgzhUSCy9OEiAviD0T31mybnVdopBwk8l6daRR0FZmMx0yUQWdqYKskHcAa9uYvj4vZ+XoIpEnQSg1XiafrjoLcV9TsUs0OynfEW1SPASH4VpAwzkOu/LLM25LirrisWK8SfqBSSbzAkUXBMcTfsI/9sx8syt8zsAmsf35Wa81aquoe+a+OGiF3Icfev/fcwqCIOMKPeIL1GWUowSMpqZdLS/X60AV3grbcTkz+5tY007KTYTyzOH+SdOpr/KvFg//VZ09B79ZRaw55WIJL42qXMkZVRraQ78Aa5dWJiNZCp7m83GuBZtW8JlpJsdPt3sjkSLeDiGiBUiOfjQa4cM+oR801Ii0gAK2JCumVEvOgzXSlPBl1NtCckQvzSX5I6edOGOQYV6JSw4RAZdFvYknAABTV89y1+zqudbdoDr5GKHS85UAS0zTEb7l+GfqW4QldoUSGemvqlq9imH2jd2Zxztq+S9kQRLKnerL0dACPrLL5oyFoCGv759au+1ybFnwyTxRSUfFpMpz6KlzJr7af2q6CwgezhyND8h/ZtDi0Eq1Ekh7pYUp9TR/t2Boklf4lVV8STcpFAbVJ6WkeIkBmSmAFo/I+FJKrIoG+mzJYqx0aluitTmVkETkfLqm4LvRqhLnDQwwlRANqzo0og1v7szq4iFcT+h2HrX6ywLpqAltR5yIgsk8O9hjOJRkbhnwa4TDDOJPQuWhS/zg47A8sa3TdbHe4wuqmzehWt2IN+V1YU9/eTmavQuDtOxQ0Qr1n5i05LAMXlJ397na8vy6Jx3eEb+xjmdZ7Oq7fBZyR3qdCI5vAC+RaUL3qDdZ3fZ4DupMtko4l4zxfkmf+hi1fbFHNh/xbdbfU3Juhys8X5lE5Uw2UYSFtFgYf1xdZHLntnFW4qxlz4d5+ULhzAdw2qG3C/z2LdXlgPui5BkSNqkzcFKxibqgdg1iK/RLbdaYh6fFDap5Tl7ZZH9OoISFgY+hQkoBlbLLSG5OoWYD06iPsTiHxrt/w4nTRhqqgIDpv2qqfymtYCHNKE6eBy9ke1FqpZMXWaHP9xkL881dg00px5XbcleoBTwNmQNZYL1RGDFYm1NdcgAWXSWzCK7EwjqoTH7wNv6owTSUCnyPQ3ufbEUj6kjBFLLdAZG4NFlyAgW0DlMqF+wZi01i8UWcY82rLn/diD5vMMcwv5xg0QNGco68ZdKdIsEY8y7oTnVz3CZcZcHpVMbfZOoZR7IL0tp40oDWbAcFItGZQJnc18zzF6ULYwdZsycv6aXGT7+hH1CVlnaXlHKFtFJ83S3geUDd0yoMlSHn3XXY0eMf7IoWR1nWRgI8lCBE4y6dzaVbVZ5a007Yg7zx0Qrqm4qm0xhY+f3L68e8djyG255dl8IA21a+3RKs3Pdvw1mXtKEt85BojuTAXUxvs4lCGZYsxrRSS0bvvuxkNavgTMxUjMqgSaArtNTyZg+dIe6FOAAAvjp6q06HTuln8xGf0GS5Hl6xaT3NwQgIJ7EjEC6d8pZyOQHztSj8XsycM5gBKb35ml72SuKekbcBNBhcQc9cRRUK1iJ9mG3f1zHyoTHmyZ69mWLZHytMWrGDPSC60hE+6D6EP6gTitkT3Sc1s0MXRuFR3W38B+q8KJDzcQdjOT1aAR4pGHJTNn55gYUn7OUUwpr2ILBKZoL6wXAn6PpGa62q/mMi+TeMpYnnBNN1KcoBAmB4SVEEJq9vgne0lsdaPn3a/pghmAlyc3PkrFiCmWBJyUAx+NA3TeVsP9tDhQSU1W3mfrSuPueEILYNhsbcCWzdyRiFZ0/igDQQHALtytLO16GNLwVsTPrnCEagQHLq1i3cqAoxFrF2mlOa0cm2TxrdiY/76I+HcfXb1KMV7Ct/lx0N1zgXdIR1y23nsRY4Srm7b45qLCSLZPUEHQQkbFSMZni8ac6ncDsiYyvQSb5KNYgZtLj7y5h/Iu3y3xLMhzdv2EYfCelQ4vnm21tcNU+VbdTc/xkGbkUZEwfMuOJRcB+hZ6MAJsxwhBTjbjCMutOEf/gp3EXDsUNuTLF97eSO2GYyRUBALaUDk0cUYB4Rfn4jHrN63maFv6NHwioxb7H5pzUiZD73t5ovXZbZCKBu/irkXSglBsxeneupw/hL/bMiwWbPg88jKy/TP18O6pVUm2HI+Zq/jw6RKLFndRtNdjMZQcCiZHxdR4kw7X3eFUCh2t+NwchxydSWiSV+FBAJBDrbE8pZyQK1AWDvmPHk/5O5DGEHezReZEmXiztcx4nD4s1jgUDsLbXC8UBHVtCu4mhsw2PGkvTU1NrtEDbzt53rd/R3r9yVeNvJbHUH1bMmqdCRVvGfz6gmWD2y5DvUjJJkapRbfz63QTqx3F34kGq+JsZun2riLePM6yz3MJIHVtOXQq22Y3yWS/Qd+rTj7LjVB/ZwJbJ794wfi+Unde4KkTHSYP2gp993OdhMVI2FFBo7x36vCRNpMzvm/G8naLHq7b9vnY3JlnxiLtwwcGyLgVCsynJOGqDwZd92yiNQ8e11RT/tzyOKAX9ESxfAY3j7UHwaQrJi4wFcF0uvFwV+yfUrwpKVj1f7XVftTXvUP20h2LLjM9fLr+FpkZnpZCZkcL8pKsKe6uV/A+WMkxQCiAvSLt5t/xmBAO/tXf6RKRmjcVwrklFUAB+ZaxNhdJU6ii7VyhNeYqy4drLb271rHMgd5cMDsVmUyce00bLxbQKvv0bjhqCYJDn+JQ/M43xCM+GWCAPZVnLQN3UjJEjHI/fH9Povw0RXsmBHIWYZ6AxyIesxIpeD1YIB78UK90ygH5SMzckrj5uZdzmkV9lsdGYiybjyqex8kfNT9lSLkWp+xhUWITmYNnZIxxuBp4Bqn0iOUmkl2QwaXoavX6+a4JGXBH5TX1wxcy/+DMKDuf3d1myqYkhkjHGESlK4uue9eq67qA1UGJl2WDvsxO4ccwM46kslR7YjlPXYzHAKihXFXGpW2vKvWHW3mLNkpo10rJlN1UN5p7e/obseRTqUYFcoeAmtSvRSrVQrv5ozykA9dUlYDXbb+sD0AJW9ftUW9lmBH3xBerIEJsA/j6WO4b2+pBm31MR5kUpoygNi35Cv4BXFXj61g62KTWZdGXmLHc6I9RhT1DY58lAM4BRoXpmuCPvcTBlyeL1IzsYQjHRjl0qOHkleoPan4fJlfE14w6uQDtmg14NKfkcYhkQOL3M4xAsNPJ7Yi2hS2pypsE6pvH1ZfrL4ZYGCx2k9/vYLk3ZieIkR862E3kZnQdouYxSDlpPK7a9cC8pangXEpL+WV7Kg8Nywn9S04wL6jb7N1MXJP+K0T7SWIpzITJUMI2ROhp6Z/QpgS7rLgdh5R3Kv42bqn//96RK3T5BHbIYTEA5XfxQJziA/R+ezA6WtCnF3PbecTQLED38sij/gQBelZkSTn88MJjCoLG1f1Um1a/0KcWtcK++ILnJcAehbDbceA0aRU3yf10A/dQncLKzdAB+5+87gU/AEGodS+g59dNSlwZBEwPo/28AmAGMDLgPDFKdex2rTs3E3GjH4/oJlQqu+l3k8DnGuSoJTjMWdT+62ZCnXfjkZ/UiCVGvsxYBCYU0DGQn2JtiQjZyw51OPygFctoG+lUGcZz2Pfp7ph79Sz5fRtbngRngyqOD4wUwzTHXw4nhadx+1K4kPvQv8DW/pQPMll6/JcMtXfMPcoYz0SfYdPfsaGw8P+K/0xn0AqUsaq4xKesWGE5/7jva1rHCs/QfH3XzeKYrVuyU5KPZ9RH/5Py3KZ8Ai1NloBHa4IIUlP01dYxPl1OG8zOv1L/JyDEWhW5dQOGmQQ550HCrNQv954o1UdRmhXGrSMRRnkogVvmVjcEFxmy3HgAcVgXObSIp4NNCcG2w22zUSf2hge32mAjob+6xQ2gWWQZj8/V7Nk7YOdGHOytS8I3OzFtcV6RDPZeVKdVSEAewstLfYoz1heOw2AwPN41Kxnjr8HAHpDwWwNWy0NqrrBY9LcSqJPFs0DNt6wVqvpT80V4l5JffU++TGMV6S/EkIfCDeKT1zI2GmR1PFF63y9DgPDyBqmnFTY7yKxRI22gLdKqsgG4pks5iNCsUeP9m6YLuvXnBnZKVGYbsdzn+xa8XiTRYcs6WRtlZBTOUY25byNoleJKk5LQR0TAmlgEYH1fO6TsioSLdJJ6oSTg+56tkvaQKROnsMaUe2CS663LiQ5M7WRMA00IenT+0i7rD8H87gl5SBfdaFRaoTBxfR7A4V+kFjC5KYJuWgSyZxS9nuqVfFGnAgTB71yq8jc42AWdJAaxWmzPfz/iF0gcL6QGTGzTBkz+VHUd6kC7lUHLNjwJuc/rATyoTIFg1I0+ARgokrLE+ekWdJ3e6U70AgGLPwhPir6yhRtHU0gI8zr4/MduVH8IDzRtp2FoOF9eVJda2b8FmWpRaPgNLIHdw7d49OxbJ2sCWMST+xac+q5ZZGltEJ4YU5ETWcJW1seYle2HWCcEoApyhRYItq/irOEgaGfOPE3Dnt6mRxCsF46EGWCxc1EB8csFwZwzFQmbUoNVoA/pFpcOgtOJemyJO0GHuuWE3sIaSZjVrz+6pCz2qL4+DoMQl763vCD7ciQ4MhhySBIOcW4wjW0jG0QG4Ashq9G6shNb275AOFXA4XMw+TrMuf+SPT7De3TBMv2rUx+8oZCnCV5kfreyS5scdx08/GK5mz3T6Ii7MyEA8A4IxG7zLP30Wmy0ztLgC//PowGrNm+Txofp6KexwiEYjJDHGf/qj1CPsrxbtGGqysa7waL2wy95x7rngykj6/+ZXGk4IZqWtlDKxC5Pe6PpAlP62UyfXotaSoE4w4y7Vx6hNasgsc7DQCfJE6xWYW1Bc25q4ptiUc0l1BJ+9gSH6plxopqFwEK0awhrSCTzE3kLR230TnL66Jt3Yr3v5fn9MPkAiCPm1+Bur7pVfhiPDo7HeFi3QJHYwoEV0xI8xfnVgFVZuC4Mo5LTS+x0NmBw7FlkDCeuv5eXL2VqulVzFnJmPecY4cIW88QhVGL8N9XMuSSPTwYF34w2IueNRmJ3KmOeKQJkGl0Iy2Ogr8x0ErNfbOpnO1H4Lgd4+KB67aNRLvwqcjZWDExqeQZWRLlEJIwadQ28f6Vyb5ErV5GgpoAxV9WiUR6OZle+R2AL+QK1UfWsJ1QyK5c60P5yfgm5triu+P31ZX82FBbuBPM35AyLve+wOlqbDpGO+Hvk4H+Pip5GkA7uPJzKGkKCJyC2Y/b/13aHeyIeAao77ga6lazY+F54xDRGU1LK9Fj1fpygzrsYKuCyG4emsLE4alR7LAjMNbBfLqcyhCzQc1zF+r9hX+w5AftfFLIWElHwrewR03Sle33kUI16o9zKJ5Hl6d+p1D3YOgvrxWohqgKCHJQyb4WIti5t7vONoYtiFWNxe+PUKnDUjiNxtgR3Pg3NU1b1981pzM68Yq2OT5f9W9JsHOvfKlVxW6v0fzH64DUZiO9wHvFRr5JNpT2jZtdrMkbIzKnDh76kBwWVhOYIhZ1EAM6TAyiSaPD5Jn/wURK071u5urX315EhU4J1+WO06EPNNo+hIOI4pJjcel66GbUxq5Li7ocl6xh8CncPEBTOmSLJaz73dXXOVcwHyVKy1rkD830FEW3vqANDyZ430H3oWxKQXzm+f2N/NHOaptXTJUrrcEszZu8GvZuI/geUAK5hwMk5hLFm3yOYKckbvlZMo6eNuX9L99jZusKW4D0VVRXLVsC4kls7cIA4QrjWzJjS73EPUATyg8KT9F2l/uXxyFKVFpVyWqBqMfF295YsrRXI/KG2nodmm5DkMudkdvP/lsiyF9xLe6RkHaxIrNS87Xh2ioFLbpRrdFgcxYiNqywQlII0AdMlTV5DHRh9xbHurgDEOEeLGNDLATGnUzpqRhUrXwWKVqJSeBcC2TJeolhhLVVN+LGJuIuYYBX9AdvaIfw7Lf+5NWLqpfBn4WiO1JvYj2XnvduZOxaK8o7BR7Z7DZY6vYHmF0mrtVhvIAUP3Ehx7n4pMukWtEuaocRD7jTZcgMwdUGdaVo54sIVK4LReH6iciVK5Zz4QINIgg+Yov3JTbO+gSIg3snWgM7OXTHkz7+t1MHUviwcHIjvGl/PSdrp94cpILTykJStxxN8urG/c635eKSEiybktyBt12xY55bIBGB8K0XZSq9/b/mqcU1Z+G+WbmeORU43Uco23lJ1jY3iE+EcbLoAM/DWLb2i7wqCBDeaZsvfdmzBxJmfv+0hmSixdGL7rHQT/MPVdqyPkHQYVhTsl4iCEPnGwZsJ1rgGuWNzmYi8aTvDlg2N/IhDFmzi6Od8n8XWl/nJepg4qebbL3+vyEoOx3iNek+FwWd+odt3U85ohZ7ZhL0JA7kWX3wQaDrnGln3jJHsmlr3fdsajtPJoqANNoo622Nfz3ueZ3rSwkRq+vUOKyg+bCWccKm7tjK7oAORLUfFQaeZAKqJ9bkTErQJOrfdvHJFGXIcRD6DVrV+PWwv5v6i+wRwDzBFVooK+rvQt8BAx2Nx8XmemDwbek6PgvhH/RSmIG+9FegI04dxBYWAfEllEloBRfu2XBnF98yvUM+RXp+jf/Ql5fTqmLr9x4DamdWtOmMnKJAPkLHZPgQRQZVv/CuptyatsmggBw+EaYfU9qso3ufZRgB+j7O1ZbqFJ/cLLX+1nVxyGW/Wo16liS8HPikdap8cGoJp8JXoK+ZOijxGpEAu9ghOXZPL9Q2idOAhqAkL08oI9Pe742W6VtxPMzGD+QNT/ol178ut9xx9U4gv+hTnqjOd//S0C1JrdHcWG/Z3xbaEx3VR3ms+H3ZmBCMQmEN7NIcSLC9cjD8W/v1JpmicljZCpaO/4X6quo+CbhqyKfrZ+xuTH6NdotwtR91H9tvEC9++DOvAlQNP/02aKi9JcmfP6s8OF7+NQfCKMtvIdfAhXWeUHxDGJPUrn62VLtprBQvZyubkvvhgak1zf7dHbxse5qJZmlBHZDnQBEWh2QtaL+ekfSUS++tNKFwmmCAAV7X/cun1tO2uy4U/LhdHAhauj2N1H3jIwUxaKZQdd71Q69iHBqqFG4c326ecHQF30LYkfejwes6PccXF/wc04a75aYHE8FYpteRK+FAoaBulhb8Rx1AT79Ddq1bc704Acly95sJATEMg/yOOsKXq2s2vGAYP3M3oWvuSbZ+a0sxXuqm2RRRvTiEHpPfb/qyX8wPb6IUZVibcWyxqDFCKfQaUIhyW3SHqYT0G6El+jZcLsd1LrUKGyjMKJRMxI5v4v53JQzDENIviB5Y2UHkw12e+WbfGIxhPYKFBS2CE4lE0iQMMXHfQlopywQY9LL4V0EvKEJ2mP0YyJimIDC6o8p/6P/mSLt50gCtSKf34J8FALxV7ql1TzWPQR8g+9CsSWv7cIO6KNzfSqMeDjCkcrBbIkfIbzjSptKYw3D22jmmC3tDIVtDlA1mvm7I403AGdx5scF+pyVq5ETs2dFqWmBvkpOVYkReqxKAnTTWanaZx6ER5KC6nj4hXSyAyWIMTQTaYPkMBXw5/tTmi5b66kcQmeygmEfG5CPnfbG/9zQuHyL+Ne0Pj+Izcicdmttx778Xe5yLPNi2JhUiMfLs2QEuaqvGRGlfvtERa0+34IB4CP/j2q9KQtbyF4b1X6F9/5QwMjGld2GLubVNMKxp4wqRbgAzWITxpmPpziY7Ml92gUYTQtzZ9VVUJu7Mq/orejX6F/l0DUjwQcxi3agJhxFGfLuq+PYo0t/mnI5pD3P+T5OLJwZyEG/H1+kmYTDmFXdUa6yR+3+oKsvS27OsnnVXgZb4iykzdF0gmwk+gXNkCT4qes+9gaiK9boZpyMAn4ALj/Q4tlSMNZg4YCeNoTCpsMJtv6KSMEzpipqnCD70wy2AEEUkkvx85mrvYkNO8MVcczEM9s69pE+TxpVpRu/EnrGcdFuh2vJkne5w19u0VMJT7ZBMPKE9/7BFTWxGv8F3bDVtn1PH+hL7xZR4Nh+22bK+G04zNklZy6Udd0p1qT8IjggVbpKg0SVWXkNw/Ii285mmBE/B+dCMrMr3Aui83fo6fZyvDyJhZeum1cmYXknfAddQPZCHnWx0Pui3Itk/HQ2PL+DTt1Zk/PZ3Bei2JK3LvViZ+g/cjuqP9L9P+XwJznSGca7qSTjqsDuieO6QXTIG7hdQo0ob9zWHwWLf7pQnLt8KUkcLMJ6gWuG12ntHN9NuY8BBY6pClxux4sx8YCQHnaHToqf2lSy81u5KOvw5a5VpdPpz7BQmxB0XxIj6tKutDYSO9g2zhpQ+MMpSKgdNFc/EgXMLyHzLcgEH+zzhBngZApQ8+MvSuIu+LdK6WHUESzYG8YmAuyp77sZKqkGATNDc9u8qU3F8CLexXGlqUtzC0Uvpmi7NuUCmKpKn2BngKfzG67XQD7T2duwy298cbg6rBNi82oGGlBHyPCSI7OzC2BYO1iaYh/RuSEUDrMehpKfH8qMiejnQS7TwtDIl3uu/5XQAyIezWsjHuYY4brKvS54viCq9JtGe/ZajsKcOZxS7thy3bbIcGQkPVXnODKP59Px4IuA5iq/Zxkel8/ydIw/EbPk2YVSnI/LBQ4y9MMQczgG2E+5CW8NjUi05kOqAE992hiVIHdBtn3SdkI10UO+Ox58wYzBOooWogtqpV8TyArqamB/Qq09vqlzXk2r3mv6/AAAA=',
@@ -1352,11 +1387,12 @@ var CASES = [
 
 /* FAQ */
 var FAQS = [
-  { g:'無料個別診断について', q:'無料個別診断だけでも大丈夫ですか？',
-    a:['はい。無料個別診断は、入会を前提に話を進める場ではありません。オンラインで30分、事前の準備は不要です。',
-       '現在の婚活の状況を伺い、困っていることや迷っていることを整理し、次に試せることを一緒に考えます。入会後の支援内容と料金は、ご関心があれば必要に応じてご説明します。ご相談後に入会しない判断をしても問題ありません。'] },
-  { g:'無料個別診断について', q:'無料個別診断を受けると、入会しなければなりませんか？',
-    a:['いいえ。無料個別診断は、現在の婚活がどこで止まっているのか、最初に何を変えるべきかを整理するための面談です。',
+  { g:'無料個別相談について', q:'無料個別相談だけでも大丈夫ですか？',
+    a:['はい。無料個別相談は、入会を前提に話を進める場ではありません。オンラインで30分、事前の準備は不要です。',
+       '現在の婚活の状況を伺い、困っていることや迷っていることを整理し、次に試せることを一緒に考えます。模擬お見合いや33項目の評価は行いません。',
+       '入会後の支援内容と料金は、ご関心があれば必要に応じてご説明します。入会するかどうかは、相談後にご検討いただけます。'] },
+  { g:'無料個別相談について', q:'無料個別相談を受けると、入会しなければなりませんか？',
+    a:['いいえ。無料個別相談は、現在の婚活がどこで止まっているのか、最初に何を変えるべきかを整理するための面談です。',
        'サービス内容と料金をご確認いただいたうえで、ご自身で判断してください。無理な勧誘は行いません。'] },
   { g:'入会の条件と書類', q:'どのような人が入会できますか？',
     a:['18歳以上の独身の方で、結婚を希望し、必要書類をご提出いただける方が対象です。高校生はご入会いただけません。'] },
@@ -1376,14 +1412,14 @@ var FAQS = [
        'そもそも、お相手と会うお見合いもデートも対面です。オンラインなのは、その前後の準備と振り返りの部分です。',
        '移動がないぶん細かく回せます。お見合いの翌日に振り返る、送る前のLINEの文面を確認する、といった支援は対面前提では成立しません。',
        '面談はオンラインで行います。ご希望があれば、東京駅周辺または茨城県・守谷駅周辺での対面と組み合わせることもできます。'] },
-  { g:'無料個別診断について', q:'恋愛経験や交際経験がほとんどなくても大丈夫ですか？',
+  { g:'無料個別相談について', q:'恋愛経験や交際経験がほとんどなくても大丈夫ですか？',
     a:['問題ありません。アコード結婚相談所は、交際経験が少なく、女性との会話や距離の縮め方に悩んでいる男性を主な対象としています。',
        'ご入会後は、模擬お見合いと33項目での確認を通じて、あなたの良さが伝わっている点と、次に試せる工夫を整理します。取り組むことは1つから2つに絞って練習します。'] },
-  { g:'無料個別診断について', q:'厳しくダメ出しされませんか？',
+  { g:'無料個別相談について', q:'厳しくダメ出しされませんか？',
     a:['ご本人を否定する場ではありません。まず、できていることを確認します。',
        'そのうえで、この伝え方は相手からどう見えた可能性があるかを整理し、次にどう行動するかを一緒に考えます。'] },
-  { g:'無料個別診断について', q:'現在マッチングアプリを使っていますが、相談できますか？',
-    a:['はい。無料個別診断では、出会いの数、プロフィール、メッセージ、デートの状況を確認し、アプリを続けるか、アコード結婚相談所へ活動環境を移すかも含めて整理します。'] },
+  { g:'無料個別相談について', q:'現在マッチングアプリを使っていますが、相談できますか？',
+    a:['はい。無料個別相談では、出会いの数、プロフィール、メッセージ、デートの状況を確認し、アプリを続けるか、アコード結婚相談所へ活動環境を移すかも含めて整理します。'] },
   { g:'活動の進め方', q:'お相手はどのように探しますか？', ibj:true,
     a:['スマートフォンやパソコンからIBJのシステムを利用し、年齢、地域、職業などの条件をもとにお相手を探して、お見合いを申し込みます。アコード結婚相談所では、希望条件を整理するだけでなく、どのような相手に、どの順番で申し込むかまで一緒に設計します。',
        'お見合いが成立した後は、双方の相談所が日時と場所を調整します。お見合いは喫茶店やホテルのラウンジなどで1時間程度行い、お返事や交際成立後の連絡先交換はシステムを通じて行います。'] },
@@ -1537,7 +1573,7 @@ var FAQS = [
   /* ---- FAQ ---- */
   var faqList = d.getElementById('faqList');
   if (faqList) {
-    var ORDER = ['無料個別診断について', '入会の条件と書類', '活動の進め方', '料金と契約'];
+    var ORDER = ['無料個別相談について', '入会の条件と書類', '活動の進め方', '料金と契約'];
     var qs = FAQS.filter(function (f) { return !f.ibj || LP_CONFIG.ibjMember; })
       .slice().sort(function (a, b) {
         var d0 = ORDER.indexOf(a.g) - ORDER.indexOf(b.g);
@@ -1594,7 +1630,7 @@ var FAQS = [
   chk();
 
   var NAMES = { hero:'ファーストビュー', pband:'実績バンド', worries:'ご相談内容', safe:'ご相談のしかた',
-    staff:'相談担当者', consult:'無料個別診断', meet:'IBJの出会いの仕組み', support:'入会後の支援',
+    staff:'相談担当者', consult:'無料個別相談', meet:'IBJの出会いの仕組み', support:'入会後の支援',
     proof:'実績', cases:'事例', price:'料金', faq:'FAQ', final:'最終CTA' };
   var last = 'ファーストビュー';
   if ('IntersectionObserver' in window) {
